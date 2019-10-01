@@ -8,15 +8,14 @@
 
 import Foundation
 
-//class ServerResponseObject: CoreObject {
-//    
-//    var statusCode: Int?
-//    var statusMesage: String?
-//    var status: String?
-//    
-//    required init(data: [AnyHashable: Any]?) {
-//        statusCode = data?["code"] as? Int
-//        statusMesage = data?["message"] as? String
-//        status = data?["status"] as? String
-//    }
-//}
+class ServerResponseObject: CoreObject {
+    var statusCode: Int?
+    var statusMessage: String?
+    var status: String?
+    
+    required init(data: [AnyHashable : Any]?) {
+        statusCode = data?["code"] as? Int
+        statusMessage = data?["message"] as? String
+        status =  data?["status"] as? String
+    }
+}

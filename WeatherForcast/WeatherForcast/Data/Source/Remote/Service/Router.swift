@@ -7,28 +7,30 @@
 //
 
 import Foundation
-//import Alamofire
+import Alamofire
 
 class Router {
     
     static var baseUrl = "api.openweathermap.org"
     
-    //    func buildUrlRequest(_ route: Route) -> URLRequestConvertible {
-    //        return RouterUrlConvertible(route: route)
-    //    }
+    func buildUrlRequest(_ route: Route) -> URLRequestConvertible {
+        return RouterUrlConvertible(route: route)
+    }
+    
+    func buildValidFullPathForRequest(_ path: PathURL) -> String {
+        if let url = URL(string: Router.baseUrl) {
+            return url.appendingPathComponent(path.rawValue).absoluteString
+        }
+        return path.rawValue // the value never jump in, dont need to care about
+    }
+    
     //
-    //    func buildValidFullPathForRequest(_ path: PathURL) -> String {
-    //        if let url = URL(string: Router.baseUrl) {
-    //            return url.appendingPathComponent(path.rawValue).absoluteString
-    //        }
-    //        return path.rawValue
-    //    }
-    //}
-    //
-    //enum PathURL: String {
-    //16days = "/data/2.5/forecast/daily?"
-    //current = "/data/2.5/weather?"
-    //5days/3hours = "/data/2.5/forecast?"
-//    key = "82070955348f0cef2d34a168cbb6baf8"
-    //
+    enum PathURL: String {
+        case sixTeenDays = "/data/2.5/forecast/daily?" //param: key, city name ( q), city id( id ),
+        case currentWeather = "/data/2.5/weather?" //param: key, city name (q), city id ( id )
+        case fiveDaysThreeHours = "/data/2.5/forecast?" // param: city name (q), city id (id)
+        case uvIndex = "/data/2.5/uvi?"// param: lat , long
+        case airPolutionHead = "/pollution/v1/co/" //param: lat, long
+        case airPolutionTail = "/current.json?" //param: key
+    }
 }

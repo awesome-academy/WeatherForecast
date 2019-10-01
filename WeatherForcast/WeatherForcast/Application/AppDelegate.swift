@@ -8,6 +8,7 @@
 
 import UIKit
 import netfox
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // testing launch screen ui
-        Thread.sleep(forTimeInterval: 5)
         configureNetfox()
+        configureIQkeyboardManager()
         // Override point for customization after application launch.
         return true
     }
@@ -47,6 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func configureNetfox() {
         NFX.sharedInstance().start()
+    }
+    
+    private func configureIQkeyboardManager() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.previousNextDisplayMode = IQPreviousNextDisplayMode.alwaysHide
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "OK"
+        IQKeyboardManager.shared.enableDebugging = true
     }
 
 }
