@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.7.3)
+  - netfox (1.13.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7.2)
+  - netfox
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - netfox
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  netfox: 44e626a4fe8bd1cde774346b03edb84a593077de
+
+PODFILE CHECKSUM: 9d280ac877c758235a18d424684a4128a6bf95de
+
+COCOAPODS: 1.5.3
