@@ -8,4 +8,5 @@ target 'WeatherForcast' do
 
   pod 'netfox'
   pod 'Alamofire', '~> 4.7.2'
+  pod 'IQKeyboardManagerSwift', '6.3.0'
 end

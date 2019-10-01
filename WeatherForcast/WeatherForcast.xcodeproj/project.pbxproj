@@ -8,40 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		524F45385834A3BEDDB94326 /* Pods_WeatherForcast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D225E539FD71BBA828237A05 /* Pods_WeatherForcast.framework */; };
+		DB1B6A5B23432F5C0095D02A /* AlamofireAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A5A23432F5C0095D02A /* AlamofireAppManager.swift */; };
+		DB1B6A5D23432FB60095D02A /* ServerResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A5C23432FB60095D02A /* ServerResponseObject.swift */; };
+		DB1B6A5F234330330095D02A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A5E234330330095D02A /* Router.swift */; };
+		DB1B6A61234330660095D02A /* RouterUrlConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A60234330660095D02A /* RouterUrlConvertible.swift */; };
+		DB1B6A652343309D0095D02A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A642343309D0095D02A /* Route.swift */; };
+		DB1B6A672343389A0095D02A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A662343389A0095D02A /* Constant.swift */; };
+		DB1B6A69234338F00095D02A /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A68234338F00095D02A /* ServiceRequest.swift */; };
 		DB31973C2341D73000FB0F68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31973B2341D73000FB0F68 /* AppDelegate.swift */; };
 		DB3197412341D73000FB0F68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB31973F2341D73000FB0F68 /* Main.storyboard */; };
 		DB3197432341D73200FB0F68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3197422341D73200FB0F68 /* Assets.xcassets */; };
 		DB3197462341D73200FB0F68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3197442341D73200FB0F68 /* LaunchScreen.storyboard */; };
-		DB3197672342044000FB0F68 /* AlamofireAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31975D2342043F00FB0F68 /* AlamofireAppManager.swift */; };
 		DB3197682342044000FB0F68 /* RequestParameterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31975F2342043F00FB0F68 /* RequestParameterObject.swift */; };
 		DB3197692342044000FB0F68 /* CoreObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3197602342043F00FB0F68 /* CoreObject.swift */; };
-		DB31976A2342044000FB0F68 /* RouterUrlConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3197612342043F00FB0F68 /* RouterUrlConvertible.swift */; };
-		DB31976B2342044000FB0F68 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3197622342043F00FB0F68 /* ServiceRequest.swift */; };
-		DB31976C2342044000FB0F68 /* SeverResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3197632342043F00FB0F68 /* SeverResponseObject.swift */; };
-		DB31976D2342044000FB0F68 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3197642342043F00FB0F68 /* Router.swift */; };
-		DB31976E2342044000FB0F68 /* BaseSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3197652342043F00FB0F68 /* BaseSelected.swift */; };
-		DB31976F2342044000FB0F68 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3197662342043F00FB0F68 /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F05A4C46946A9134FDDD036 /* Pods-WeatherForcast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForcast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherForcast/Pods-WeatherForcast.debug.xcconfig"; sourceTree = "<group>"; };
 		C2732A1BF55B769CBC37452C /* Pods-WeatherForcast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForcast.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherForcast/Pods-WeatherForcast.release.xcconfig"; sourceTree = "<group>"; };
 		D225E539FD71BBA828237A05 /* Pods_WeatherForcast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherForcast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1B6A5A23432F5C0095D02A /* AlamofireAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAppManager.swift; sourceTree = "<group>"; };
+		DB1B6A5C23432FB60095D02A /* ServerResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseObject.swift; sourceTree = "<group>"; };
+		DB1B6A5E234330330095D02A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DB1B6A60234330660095D02A /* RouterUrlConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterUrlConvertible.swift; sourceTree = "<group>"; };
+		DB1B6A642343309D0095D02A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		DB1B6A662343389A0095D02A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		DB1B6A68234338F00095D02A /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		DB3197382341D73000FB0F68 /* WeatherForcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB31973B2341D73000FB0F68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB3197402341D73000FB0F68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB3197422341D73200FB0F68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB3197452341D73200FB0F68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB3197472341D73200FB0F68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB31975D2342043F00FB0F68 /* AlamofireAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAppManager.swift; sourceTree = "<group>"; };
 		DB31975F2342043F00FB0F68 /* RequestParameterObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestParameterObject.swift; sourceTree = "<group>"; };
 		DB3197602342043F00FB0F68 /* CoreObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreObject.swift; sourceTree = "<group>"; };
-		DB3197612342043F00FB0F68 /* RouterUrlConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterUrlConvertible.swift; sourceTree = "<group>"; };
-		DB3197622342043F00FB0F68 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
-		DB3197632342043F00FB0F68 /* SeverResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeverResponseObject.swift; sourceTree = "<group>"; };
-		DB3197642342043F00FB0F68 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		DB3197652342043F00FB0F68 /* BaseSelected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSelected.swift; sourceTree = "<group>"; };
-		DB3197662342043F00FB0F68 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +157,7 @@
 		DB3197532341DBD500FB0F68 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DB1B6A662343389A0095D02A /* Constant.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -214,13 +215,12 @@
 			isa = PBXGroup;
 			children = (
 				DB31975E2342043F00FB0F68 /* Protocol */,
-				DB31975D2342043F00FB0F68 /* AlamofireAppManager.swift */,
-				DB3197652342043F00FB0F68 /* BaseSelected.swift */,
-				DB3197662342043F00FB0F68 /* Route.swift */,
-				DB3197642342043F00FB0F68 /* Router.swift */,
-				DB3197612342043F00FB0F68 /* RouterUrlConvertible.swift */,
-				DB3197622342043F00FB0F68 /* ServiceRequest.swift */,
-				DB3197632342043F00FB0F68 /* SeverResponseObject.swift */,
+				DB1B6A5A23432F5C0095D02A /* AlamofireAppManager.swift */,
+				DB1B6A5C23432FB60095D02A /* ServerResponseObject.swift */,
+				DB1B6A5E234330330095D02A /* Router.swift */,
+				DB1B6A60234330660095D02A /* RouterUrlConvertible.swift */,
+				DB1B6A642343309D0095D02A /* Route.swift */,
+				DB1B6A68234338F00095D02A /* ServiceRequest.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -370,16 +370,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB31976D2342044000FB0F68 /* Router.swift in Sources */,
 				DB3197682342044000FB0F68 /* RequestParameterObject.swift in Sources */,
-				DB31976A2342044000FB0F68 /* RouterUrlConvertible.swift in Sources */,
-				DB31976F2342044000FB0F68 /* Route.swift in Sources */,
-				DB31976C2342044000FB0F68 /* SeverResponseObject.swift in Sources */,
-				DB3197672342044000FB0F68 /* AlamofireAppManager.swift in Sources */,
+				DB1B6A5F234330330095D02A /* Router.swift in Sources */,
+				DB1B6A5D23432FB60095D02A /* ServerResponseObject.swift in Sources */,
+				DB1B6A652343309D0095D02A /* Route.swift in Sources */,
 				DB31973C2341D73000FB0F68 /* AppDelegate.swift in Sources */,
+				DB1B6A69234338F00095D02A /* ServiceRequest.swift in Sources */,
 				DB3197692342044000FB0F68 /* CoreObject.swift in Sources */,
-				DB31976B2342044000FB0F68 /* ServiceRequest.swift in Sources */,
-				DB31976E2342044000FB0F68 /* BaseSelected.swift in Sources */,
+				DB1B6A61234330660095D02A /* RouterUrlConvertible.swift in Sources */,
+				DB1B6A672343389A0095D02A /* Constant.swift in Sources */,
+				DB1B6A5B23432F5C0095D02A /* AlamofireAppManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
