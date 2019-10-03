@@ -9,7 +9,6 @@
 import Foundation
 
 struct AirPolutionParams: RequestParameterObject {
-
     func toJsonParam() -> [String : Any] {
         var params = [String : Any]()
         return params
