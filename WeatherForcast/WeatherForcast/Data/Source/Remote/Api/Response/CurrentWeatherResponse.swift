@@ -55,5 +55,11 @@ final class CurrentWeatherResponse: ServerResponseObject {
         id = data?["id"] as? Int
         name = data?["name"] as? String
         cod = data?["cod"] as? Int
+<<<<<<< HEAD
+=======
+        
+        
+        
+>>>>>>> [normal][18031]create request
     }
 }
