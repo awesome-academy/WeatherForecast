@@ -8,14 +8,10 @@
 
 import Foundation
 
-struct UVIndexParams: RequestParameterObject {
-    var lat: Double? = 0.0
-    var lon: Double? = 0.0
+final class UVindexParams: RequestParameterObject {
     
     func toJsonParam() -> [String : Any] {
         var params = [String: Any]()
-        params["lat"] = lat ?? 0.0
-        params["lon"] = lon ?? 0.0
         return params
     }
 }

@@ -9,11 +9,11 @@
 import Foundation
 import Alamofire
 
-final class UVIndexService {
-    private let router = UVIndexRouter()
+final class UVindexService {
+    private let router = UVindexRouter()
     
-    func getUVData(param: UVIndexParams) -> ServiceRequest<UVIndexResponse> {
-        let request = ServiceRequest<UVIndexResponse>()
+    func getUVData(param: UVindexParams) -> ServiceRequest<UVindexResponse> {
+        let request = ServiceRequest<UVindexResponse>()
         AlamofireAppmanager.shared.request(router.getUVdata(param: param)).responseJSON { (response: DataResponse<Any>) in
             request.handleResponseJSON(response: response)
         }
