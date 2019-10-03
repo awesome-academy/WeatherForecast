@@ -9,17 +9,11 @@
 import Foundation
 
 struct CurrentWeatherParams: RequestParameterObject {
-    var cityName: String?
-    var cityId: Int?
+    var cityName: String? = ""
     
     func toJsonParam() -> [String : Any] {
         var params = [String: Any]()
-        if let temp = cityName {
-            params["q"] = temp
-        }
-        if let temp = cityId {
-            params["id"] = temp
-        }
+        params["q"] = cityName ?? ""
         return params
     }
 }
