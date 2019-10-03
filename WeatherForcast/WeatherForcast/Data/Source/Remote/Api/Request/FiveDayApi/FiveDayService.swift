@@ -11,7 +11,6 @@ import Alamofire
 
 final class FiveDayService {
     private let router = FiveDayRouter()
-
     func getFiveDayData(param: FiveDayParams) -> ServiceRequest<FiveDayResponse> {
         let request = ServiceRequest<FiveDayResponse>()
         AlamofireAppmanager.shared.request(router.getFiveDayData(param: param)).responseJSON { (response: DataResponse<Any>) in

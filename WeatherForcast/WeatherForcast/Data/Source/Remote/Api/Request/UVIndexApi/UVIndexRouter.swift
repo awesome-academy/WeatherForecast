@@ -1,16 +1,16 @@
 //
-//  UVIndexRouter.swift
+//  UVindexRouter.swift
 //  WeatherForcast
 //
-//  Created by Tung Tran on 10/11/19.
+//  Created by Tung Tran on 10/2/19.
 //  Copyright © 2019 Sun. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-final class UVIndexRouter: Router {
-    func getUVdata(param: UVIndexParams) -> URLRequestConvertible {
+final class UVindexRouter: Router {
+    func getUVdata(param: UVindexParams) -> URLRequestConvertible {
         let path = buildValidFullPathForRequest(.uvIndex)
         return buildUrlRequest(Route(method: .get, path: path, queryParams: param.toJsonParam()))
     }

@@ -283,7 +283,7 @@
 			children = (
 				DBDE05372344937C00B461C1 /* Assets.xcassets */,
 			);
-			path = Resources;
+			path = Remote;
 			sourceTree = "<group>";
 		};
 		DBDE05382344937C00B461C1 /* Utils */ = {
