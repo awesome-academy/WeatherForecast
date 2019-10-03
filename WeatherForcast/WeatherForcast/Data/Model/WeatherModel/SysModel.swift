@@ -9,13 +9,13 @@
 import Foundation
 
 struct SysModel: CoreObject {
-    var pod = ""
-    var type = 0
-    var id = 0
-    var message = 0.0
-    var country = ""
-    var sunRise = 0
-    var sunSet = 0
+    var pod: String
+    var type: Int
+    var id: Int
+    var message: Double
+    var country: String
+    var sunRise: Int
+    var sunSet: Int
     
     init(data: [AnyHashable : Any]?) {
         pod = data?["pod"] as? String ?? ""

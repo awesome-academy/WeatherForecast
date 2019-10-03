@@ -9,9 +9,17 @@
 import Foundation
 
 struct AirPolutionParams: RequestParameterObject {
-
+    var lat: Double?
+    var lon: Double?
+    
     func toJsonParam() -> [String : Any] {
         var params = [String : Any]()
+        if let temp = lat {
+            params["lat"] = temp
+        }
+        if let temp = lon {
+            params["lon"] = temp
+        }
         return params
     }
 }

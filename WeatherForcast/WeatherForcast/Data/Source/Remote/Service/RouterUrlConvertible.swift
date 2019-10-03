@@ -23,6 +23,10 @@ class RouterUrlConvertible: URLRequestConvertible {
             urlPath = queryParameterEncodedRequestURL(urlPath, queryParams: queryParams)
         }
         
+        if kWeatherMapKey.isEmpty == false   {
+            urlPath = queryParameterEncodedRequestURL(urlPath, queryParams: ["appid": kWeatherMapKey])
+        }
+        
         var buildUrlRequest = try? URLRequest(url: urlPath, method: route.method)
         buildUrlRequest?.cachePolicy = .reloadIgnoringLocalCacheData
         

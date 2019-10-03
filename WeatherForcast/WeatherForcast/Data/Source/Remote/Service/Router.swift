@@ -27,9 +27,9 @@ class Router {
     
     //
     enum PathURL: String {
-        case currentWeather = "/data/2.5/weather?" //param: key, city name (q), city id ( id )
-        case fiveDaysThreeHours = "/data/2.5/forecast?" // param: city name (q), city id (id)
-        case uvIndex = "/data/2.5/uvi?"// param: lat , long
-        case airPolution = "/pollution/v1/co/" //param: lat, long
+        case currentWeather = "/data/2.5/weather?"
+        case fiveDaysThreeHours = "/data/2.5/forecast?"
+        case uvIndex = "/data/2.5/uvi?"
+        case airPolution = "/pollution/v1/co/" 
     }
 }

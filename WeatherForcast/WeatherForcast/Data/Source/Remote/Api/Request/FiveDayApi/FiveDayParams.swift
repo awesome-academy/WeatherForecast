@@ -9,9 +9,17 @@
 import Foundation
 
 struct FiveDayParams: RequestParameterObject {
-
+    var cityName: String?
+    var cityId: Int?
+    
     func toJsonParam() -> [String : Any] {
         var params = [String: Any]()
+        if let temp = cityName {
+            params["q"] = temp
+        }
+        if let temp = cityId {
+            params["id"] = temp
+        }
         return params
     }
 }

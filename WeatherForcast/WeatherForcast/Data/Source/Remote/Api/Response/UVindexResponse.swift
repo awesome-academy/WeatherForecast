@@ -9,7 +9,9 @@
 import Foundation
 
 final class UVindexResponse: ServerResponseObject {
+    var uvIndex: UVindexModel?
     required init(data: [AnyHashable : Any]?) {
         super.init(data: data)
+        uvIndex = UVindexModel(data: data)
     }
 }
