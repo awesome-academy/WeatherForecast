@@ -13,7 +13,16 @@ struct FiveDayParams: RequestParameterObject {
 
     func toJsonParam() -> [String: Any] {
         var params = [String: Any]()
+<<<<<<< HEAD
         params["q"] = cityName ?? ""
+=======
+        if let temp = cityName {
+            params["q"] = temp
+        }
+        if let temp = cityId {
+            params["id"] = temp
+        }
+>>>>>>> [task][18064]create_ui_search_screen
         return params
     }
 }

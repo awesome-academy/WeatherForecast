@@ -24,20 +24,17 @@ class AnimationController: NSObject {
 }
 
 extension AnimationController: UIViewControllerTransitioningDelegate {
-
 }
 
 extension AnimationController: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return TimeInterval(exactly: animationDuration) ?? 0
     }
-
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let toVc = transitionContext.viewController(forKey: .to), let fromVc = transitionContext.viewController(forKey: .from) else {
             transitionContext.completeTransition(false)
             return
         }
-
         switch animationType {
         case .present:
             transitionContext.containerView.addSubview(toVc.view)
@@ -83,5 +80,4 @@ extension AnimationController: UIViewControllerAnimatedTransitioning {
             transitionContext.completeTransition(true)
         }
     }
-
 }
