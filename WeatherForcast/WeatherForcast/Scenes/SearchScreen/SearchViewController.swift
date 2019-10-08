@@ -19,6 +19,10 @@ final class SearchViewController: BaseViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var searchTableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
+    private let service = CurrentService()
+    private let placeService = PlaceService()
+    var result: CurrentWeatherModel?
+    var placeList = [PlaceModel]()
     
 >>>>>>> [task][18064]create_ui_search_screen
     override func viewDidLoad() {
@@ -55,6 +59,22 @@ final class SearchViewController: BaseViewController {
 //        navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
 >>>>>>> [task][18064]create_ui_search_screen
+    }
+    
+    private func getWeather(param: CurrentWeatherParams) {
+        service.getCurrentWeather(param: param).cloudResponse {[weak self](response: CurrentWeatherResponse) in
+            self?.result = response.listData
+            }.cloudError { (errMsg, errCode) in
+                print("\(errMsg)")
+        }
+    }
+    
+    private func getPlace(param: PlaceParams) {
+        placeService.getPlace(param: param).cloudResponse { [weak self](response: PlaceResponse) in
+            self?.placeList = response.places
+            }.cloudError { (msg, code) in
+                print("\(msg)")
+        }
     }
 }
 

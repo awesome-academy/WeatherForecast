@@ -36,6 +36,18 @@ final class FiveDayResponse: ServerResponseObject {
             list = dataReceived.map {
                 ListWeatherModel.init(data: $0)
             }
+    var list = [FiveDaysWeatherModel]()
+    var city: CityModel?
+    required init(data: [AnyHashable : Any]?) {
+            super.init(data: data)
+        cod = data?["cod"] as? String
+        message = data?["lamessaget"] as? Double
+        cnt = data?["cnt"] as? Int
+        if let d = data?["list"] as? [[String: Any]] {
+            list = d.map({FiveDaysWeatherModel.init(data: $0)})
+        }
+        if let cityInfo = data?["city"] as? [String: Any] {
+            city = CityModel(data: cityInfo)
         }
     }
 }
