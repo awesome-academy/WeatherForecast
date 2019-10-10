@@ -21,6 +21,7 @@ xcuserdata/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+WeatherForcast/WeatherForcast/Data/APIkey.swift
 
 ## Obj-C/Swift specific
 *.hmap

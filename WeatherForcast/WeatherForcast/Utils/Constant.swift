@@ -9,4 +9,3 @@
 import Foundation
 
 let kArrayKey = "arrayData"
-let kWeatherMapKey = "82070955348f0cef2d34a168cbb6baf8"

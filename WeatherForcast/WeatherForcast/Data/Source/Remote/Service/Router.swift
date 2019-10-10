@@ -18,19 +18,18 @@ class Router {
     }
     
     func buildValidFullPathForRequest(_ path: PathURL) -> String {
-        if let url = URL(string: Router.baseUrl) {
-            return url.appendingPathComponent(path.rawValue).absoluteString
+        guard let url = URL(string: Router.baseUrl) else {
+            return path.rawValue
         }
-        return path.rawValue // the value never jump in, dont need to care about
+        return url.appendingPathComponent(path.rawValue).absoluteString
     }
+    
     
     //
     enum PathURL: String {
-        case sixTeenDays = "/data/2.5/forecast/daily?" //param: key, city name ( q), city id( id ),
         case currentWeather = "/data/2.5/weather?" //param: key, city name (q), city id ( id )
         case fiveDaysThreeHours = "/data/2.5/forecast?" // param: city name (q), city id (id)
         case uvIndex = "/data/2.5/uvi?"// param: lat , long
-        case airPolutionHead = "/pollution/v1/co/" //param: lat, long
-        case airPolutionTail = "/current.json?" //param: key
+        case airPolution = "/pollution/v1/co/" //param: lat, long
     }
 }

@@ -8,40 +8,121 @@
 
 /* Begin PBXBuildFile section */
 		524F45385834A3BEDDB94326 /* Pods_WeatherForcast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D225E539FD71BBA828237A05 /* Pods_WeatherForcast.framework */; };
-		DB1B6A5B23432F5C0095D02A /* AlamofireAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A5A23432F5C0095D02A /* AlamofireAppManager.swift */; };
-		DB1B6A5D23432FB60095D02A /* ServerResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A5C23432FB60095D02A /* ServerResponseObject.swift */; };
-		DB1B6A5F234330330095D02A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A5E234330330095D02A /* Router.swift */; };
-		DB1B6A61234330660095D02A /* RouterUrlConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A60234330660095D02A /* RouterUrlConvertible.swift */; };
-		DB1B6A652343309D0095D02A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A642343309D0095D02A /* Route.swift */; };
-		DB1B6A672343389A0095D02A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A662343389A0095D02A /* Constant.swift */; };
-		DB1B6A69234338F00095D02A /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6A68234338F00095D02A /* ServiceRequest.swift */; };
-		DB31973C2341D73000FB0F68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31973B2341D73000FB0F68 /* AppDelegate.swift */; };
-		DB3197412341D73000FB0F68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB31973F2341D73000FB0F68 /* Main.storyboard */; };
-		DB3197432341D73200FB0F68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3197422341D73200FB0F68 /* Assets.xcassets */; };
-		DB3197462341D73200FB0F68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3197442341D73200FB0F68 /* LaunchScreen.storyboard */; };
-		DB3197682342044000FB0F68 /* RequestParameterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31975F2342043F00FB0F68 /* RequestParameterObject.swift */; };
-		DB3197692342044000FB0F68 /* CoreObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3197602342043F00FB0F68 /* CoreObject.swift */; };
+		DB27F6B62344984000F2147B /* CurrentWeatherParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27F6B52344984000F2147B /* CurrentWeatherParams.swift */; };
+		DB6D5D8C23458FCA009E4DC3 /* APIkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D5D8B23458FCA009E4DC3 /* APIkey.swift */; };
+		DB8D2B7223449DFE009F32A2 /* CurrentWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7123449DFE009F32A2 /* CurrentWeatherResponse.swift */; };
+		DB8D2B7423449EDE009F32A2 /* FiveDayParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7323449EDE009F32A2 /* FiveDayParams.swift */; };
+		DB8D2B7623449F07009F32A2 /* FiveDayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7523449F07009F32A2 /* FiveDayService.swift */; };
+		DB8D2B7823449F13009F32A2 /* FiveDayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7723449F13009F32A2 /* FiveDayRouter.swift */; };
+		DB8D2B7A23449F21009F32A2 /* FiveDayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7923449F21009F32A2 /* FiveDayResponse.swift */; };
+		DB8D2B7C2344A094009F32A2 /* UVindexParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7B2344A094009F32A2 /* UVindexParams.swift */; };
+		DB8D2B7E2344A0B0009F32A2 /* UVindexRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7D2344A0B0009F32A2 /* UVindexRouter.swift */; };
+		DB8D2B802344A475009F32A2 /* UVindexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7F2344A475009F32A2 /* UVindexResponse.swift */; };
+		DB8D2B822344A4BB009F32A2 /* UVindexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B812344A4BB009F32A2 /* UVindexService.swift */; };
+		DB8D2B842344A578009F32A2 /* AirPolutionParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B832344A578009F32A2 /* AirPolutionParams.swift */; };
+		DB8D2B862344A582009F32A2 /* AirPolutionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */; };
+		DB8D2B882344A58C009F32A2 /* AirPolutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */; };
+		DB8D2B8A2344A5A5009F32A2 /* AirPolutionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B892344A5A5009F32A2 /* AirPolutionResponse.swift */; };
+		DBDE055D2344937C00B461C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBDE05372344937C00B461C1 /* Assets.xcassets */; };
+		DBDE055E2344937C00B461C1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05392344937C00B461C1 /* Constant.swift */; };
+		DBDE055F2344937C00B461C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBDE053B2344937C00B461C1 /* LaunchScreen.storyboard */; };
+		DBDE05602344937C00B461C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE053D2344937C00B461C1 /* AppDelegate.swift */; };
+		DBDE05622344937C00B461C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBDE05422344937C00B461C1 /* Main.storyboard */; };
+		DBDE05642344937C00B461C1 /* CurrentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE054A2344937C00B461C1 /* CurrentRouter.swift */; };
+		DBDE05652344937C00B461C1 /* CurrentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE054B2344937C00B461C1 /* CurrentService.swift */; };
+		DBDE05662344937C00B461C1 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE054D2344937C00B461C1 /* ServiceRequest.swift */; };
+		DBDE05672344937C00B461C1 /* AlamofireAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE054E2344937C00B461C1 /* AlamofireAppManager.swift */; };
+		DBDE05682344937C00B461C1 /* RequestParameterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05502344937C00B461C1 /* RequestParameterObject.swift */; };
+		DBDE05692344937C00B461C1 /* CoreObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05512344937C00B461C1 /* CoreObject.swift */; };
+		DBDE056A2344937C00B461C1 /* RouterUrlConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05522344937C00B461C1 /* RouterUrlConvertible.swift */; };
+		DBDE056B2344937C00B461C1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05532344937C00B461C1 /* Router.swift */; };
+		DBDE056C2344937C00B461C1 /* ServerResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05542344937C00B461C1 /* ServerResponseObject.swift */; };
+		DBDE056D2344937C00B461C1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05552344937C00B461C1 /* Route.swift */; };
+		DBDE056E2344937C00B461C1 /* WindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05572344937C00B461C1 /* WindModel.swift */; };
+		DBDE056F2344937C00B461C1 /* CoordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05582344937C00B461C1 /* CoordModel.swift */; };
+		DBDE05702344937C00B461C1 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05592344937C00B461C1 /* WeatherModel.swift */; };
+		DBDE05712344937C00B461C1 /* CloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE055A2344937C00B461C1 /* CloudModel.swift */; };
+		DBDE05722344937C00B461C1 /* MainTempModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE055B2344937C00B461C1 /* MainTempModel.swift */; };
+		DBDE05732344937C00B461C1 /* SysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE055C2344937C00B461C1 /* SysModel.swift */; };
+		DBDE059B2344946600B461C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBDE057D2344946600B461C1 /* Main.storyboard */; };
+		DBDE059D2344946600B461C1 /* CurrentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05852344946600B461C1 /* CurrentRouter.swift */; };
+		DBDE059E2344946600B461C1 /* CurrentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05862344946600B461C1 /* CurrentService.swift */; };
+		DBDE059F2344946600B461C1 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05882344946600B461C1 /* ServiceRequest.swift */; };
+		DBDE05A02344946600B461C1 /* AlamofireAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05892344946600B461C1 /* AlamofireAppManager.swift */; };
+		DBDE05A12344946600B461C1 /* RequestParameterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE058B2344946600B461C1 /* RequestParameterObject.swift */; };
+		DBDE05A22344946600B461C1 /* CoreObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE058C2344946600B461C1 /* CoreObject.swift */; };
+		DBDE05A32344946600B461C1 /* RouterUrlConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE058D2344946600B461C1 /* RouterUrlConvertible.swift */; };
+		DBDE05A42344946600B461C1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE058E2344946600B461C1 /* Router.swift */; };
+		DBDE05A52344946600B461C1 /* ServerResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE058F2344946600B461C1 /* ServerResponseObject.swift */; };
+		DBDE05A62344946600B461C1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05902344946600B461C1 /* Route.swift */; };
+		DBDE05A72344946600B461C1 /* WindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05922344946600B461C1 /* WindModel.swift */; };
+		DBDE05A82344946600B461C1 /* CoordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05932344946600B461C1 /* CoordModel.swift */; };
+		DBDE05A92344946600B461C1 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05942344946600B461C1 /* WeatherModel.swift */; };
+		DBDE05AA2344946600B461C1 /* CloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05952344946600B461C1 /* CloudModel.swift */; };
+		DBDE05AB2344946600B461C1 /* MainTempModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05962344946600B461C1 /* MainTempModel.swift */; };
+		DBDE05AC2344946600B461C1 /* SysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05972344946600B461C1 /* SysModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4F05A4C46946A9134FDDD036 /* Pods-WeatherForcast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForcast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherForcast/Pods-WeatherForcast.debug.xcconfig"; sourceTree = "<group>"; };
-		C2732A1BF55B769CBC37452C /* Pods-WeatherForcast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForcast.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherForcast/Pods-WeatherForcast.release.xcconfig"; sourceTree = "<group>"; };
+		368E8F8B6AD71F7D48BD2645 /* Pods-WeatherForcast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForcast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherForcast/Pods-WeatherForcast.debug.xcconfig"; sourceTree = "<group>"; };
+		37D052D7096C8201C5975962 /* Pods-WeatherForcast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForcast.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherForcast/Pods-WeatherForcast.release.xcconfig"; sourceTree = "<group>"; };
 		D225E539FD71BBA828237A05 /* Pods_WeatherForcast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherForcast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB1B6A5A23432F5C0095D02A /* AlamofireAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAppManager.swift; sourceTree = "<group>"; };
-		DB1B6A5C23432FB60095D02A /* ServerResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseObject.swift; sourceTree = "<group>"; };
-		DB1B6A5E234330330095D02A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		DB1B6A60234330660095D02A /* RouterUrlConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterUrlConvertible.swift; sourceTree = "<group>"; };
-		DB1B6A642343309D0095D02A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		DB1B6A662343389A0095D02A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		DB1B6A68234338F00095D02A /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		DB27F6B52344984000F2147B /* CurrentWeatherParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherParams.swift; sourceTree = "<group>"; };
 		DB3197382341D73000FB0F68 /* WeatherForcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB31973B2341D73000FB0F68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB3197402341D73000FB0F68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DB3197422341D73200FB0F68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DB3197452341D73200FB0F68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DB3197472341D73200FB0F68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB31975F2342043F00FB0F68 /* RequestParameterObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestParameterObject.swift; sourceTree = "<group>"; };
-		DB3197602342043F00FB0F68 /* CoreObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreObject.swift; sourceTree = "<group>"; };
+		DB6D5D8B23458FCA009E4DC3 /* APIkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIkey.swift; sourceTree = "<group>"; };
+		DB8D2B7123449DFE009F32A2 /* CurrentWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResponse.swift; sourceTree = "<group>"; };
+		DB8D2B7323449EDE009F32A2 /* FiveDayParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayParams.swift; sourceTree = "<group>"; };
+		DB8D2B7523449F07009F32A2 /* FiveDayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayService.swift; sourceTree = "<group>"; };
+		DB8D2B7723449F13009F32A2 /* FiveDayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayRouter.swift; sourceTree = "<group>"; };
+		DB8D2B7923449F21009F32A2 /* FiveDayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayResponse.swift; sourceTree = "<group>"; };
+		DB8D2B7B2344A094009F32A2 /* UVindexParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVindexParams.swift; sourceTree = "<group>"; };
+		DB8D2B7D2344A0B0009F32A2 /* UVindexRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVindexRouter.swift; sourceTree = "<group>"; };
+		DB8D2B7F2344A475009F32A2 /* UVindexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVindexResponse.swift; sourceTree = "<group>"; };
+		DB8D2B812344A4BB009F32A2 /* UVindexService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVindexService.swift; sourceTree = "<group>"; };
+		DB8D2B832344A578009F32A2 /* AirPolutionParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionParams.swift; sourceTree = "<group>"; };
+		DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionRouter.swift; sourceTree = "<group>"; };
+		DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionService.swift; sourceTree = "<group>"; };
+		DB8D2B892344A5A5009F32A2 /* AirPolutionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionResponse.swift; sourceTree = "<group>"; };
+		DBDE05372344937C00B461C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBDE05392344937C00B461C1 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		DBDE053C2344937C00B461C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DBDE053D2344937C00B461C1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DBDE053E2344937C00B461C1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBDE05432344937C00B461C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DBDE05472344937C00B461C1 /* CurrentWeatherResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResponse.swift; sourceTree = "<group>"; };
+		DBDE054A2344937C00B461C1 /* CurrentRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRouter.swift; sourceTree = "<group>"; };
+		DBDE054B2344937C00B461C1 /* CurrentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentService.swift; sourceTree = "<group>"; };
+		DBDE054D2344937C00B461C1 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		DBDE054E2344937C00B461C1 /* AlamofireAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAppManager.swift; sourceTree = "<group>"; };
+		DBDE05502344937C00B461C1 /* RequestParameterObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestParameterObject.swift; sourceTree = "<group>"; };
+		DBDE05512344937C00B461C1 /* CoreObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreObject.swift; sourceTree = "<group>"; };
+		DBDE05522344937C00B461C1 /* RouterUrlConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterUrlConvertible.swift; sourceTree = "<group>"; };
+		DBDE05532344937C00B461C1 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DBDE05542344937C00B461C1 /* ServerResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponseObject.swift; sourceTree = "<group>"; };
+		DBDE05552344937C00B461C1 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		DBDE05572344937C00B461C1 /* WindModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindModel.swift; sourceTree = "<group>"; };
+		DBDE05582344937C00B461C1 /* CoordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordModel.swift; sourceTree = "<group>"; };
+		DBDE05592344937C00B461C1 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		DBDE055A2344937C00B461C1 /* CloudModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudModel.swift; sourceTree = "<group>"; };
+		DBDE055B2344937C00B461C1 /* MainTempModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTempModel.swift; sourceTree = "<group>"; };
+		DBDE055C2344937C00B461C1 /* SysModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysModel.swift; sourceTree = "<group>"; };
+		DBDE057E2344946600B461C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DBDE05852344946600B461C1 /* CurrentRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRouter.swift; sourceTree = "<group>"; };
+		DBDE05862344946600B461C1 /* CurrentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentService.swift; sourceTree = "<group>"; };
+		DBDE05882344946600B461C1 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		DBDE05892344946600B461C1 /* AlamofireAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAppManager.swift; sourceTree = "<group>"; };
+		DBDE058B2344946600B461C1 /* RequestParameterObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestParameterObject.swift; sourceTree = "<group>"; };
+		DBDE058C2344946600B461C1 /* CoreObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreObject.swift; sourceTree = "<group>"; };
+		DBDE058D2344946600B461C1 /* RouterUrlConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterUrlConvertible.swift; sourceTree = "<group>"; };
+		DBDE058E2344946600B461C1 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DBDE058F2344946600B461C1 /* ServerResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponseObject.swift; sourceTree = "<group>"; };
+		DBDE05902344946600B461C1 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		DBDE05922344946600B461C1 /* WindModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindModel.swift; sourceTree = "<group>"; };
+		DBDE05932344946600B461C1 /* CoordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordModel.swift; sourceTree = "<group>"; };
+		DBDE05942344946600B461C1 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		DBDE05952344946600B461C1 /* CloudModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudModel.swift; sourceTree = "<group>"; };
+		DBDE05962344946600B461C1 /* MainTempModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTempModel.swift; sourceTree = "<group>"; };
+		DBDE05972344946600B461C1 /* SysModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +140,8 @@
 		97E5BC3120AC65EEC9BE7801 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4F05A4C46946A9134FDDD036 /* Pods-WeatherForcast.debug.xcconfig */,
-				C2732A1BF55B769CBC37452C /* Pods-WeatherForcast.release.xcconfig */,
+				368E8F8B6AD71F7D48BD2645 /* Pods-WeatherForcast.debug.xcconfig */,
+				37D052D7096C8201C5975962 /* Pods-WeatherForcast.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -73,10 +154,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB27F6B72344984D00F2147B /* FiveDayApi */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D2B7323449EDE009F32A2 /* FiveDayParams.swift */,
+				DB8D2B7523449F07009F32A2 /* FiveDayService.swift */,
+				DB8D2B7723449F13009F32A2 /* FiveDayRouter.swift */,
+			);
+			path = FiveDayApi;
+			sourceTree = "<group>";
+		};
+		DB27F6B82344985000F2147B /* UVindexApi */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D2B7B2344A094009F32A2 /* UVindexParams.swift */,
+				DB8D2B7D2344A0B0009F32A2 /* UVindexRouter.swift */,
+				DB8D2B812344A4BB009F32A2 /* UVindexService.swift */,
+			);
+			path = UVindexApi;
+			sourceTree = "<group>";
+		};
+		DB27F6B92344985300F2147B /* AirPolutionApi */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D2B832344A578009F32A2 /* AirPolutionParams.swift */,
+				DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */,
+				DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */,
+			);
+			path = AirPolutionApi;
+			sourceTree = "<group>";
+		};
 		DB31972F2341D73000FB0F68 = {
 			isa = PBXGroup;
 			children = (
-				DB31973A2341D73000FB0F68 /* WeatherForcast */,
+				DBDE05352344937C00B461C1 /* WeatherForcast */,
 				DB3197392341D73000FB0F68 /* Products */,
 				97E5BC3120AC65EEC9BE7801 /* Pods */,
 				B53F136EF3EBFD21F7236405 /* Frameworks */,
@@ -91,161 +202,284 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB31973A2341D73000FB0F68 /* WeatherForcast */ = {
+		DBDE05352344937C00B461C1 /* WeatherForcast */ = {
 			isa = PBXGroup;
 			children = (
-				DB31974D2341DBC400FB0F68 /* Application */,
-				DB31974E2341DBC800FB0F68 /* Data */,
-				DB31974F2341DBCB00FB0F68 /* Extensions */,
-				DB3197502341DBCD00FB0F68 /* Repositories */,
-				DB3197512341DBCF00FB0F68 /* Resources */,
-				DB3197522341DBD200FB0F68 /* Scenes */,
-				DB3197532341DBD500FB0F68 /* Utils */,
-				DB3197542341DBD900FB0F68 /* Widgets */,
+				DBDE05AE2344949100B461C1 /* Repositories */,
+				DBDE05AD2344947B00B461C1 /* Widgets */,
+				DBDE057A2344946600B461C1 /* Data */,
+				DBDE05792344946600B461C1 /* Extensions */,
+				DBDE05362344937C00B461C1 /* Resources */,
+				DBDE05382344937C00B461C1 /* Utils */,
+				DBDE053A2344937C00B461C1 /* Application */,
+				DBDE053F2344937C00B461C1 /* Data */,
 			);
 			path = WeatherForcast;
 			sourceTree = "<group>";
 		};
-		DB31974D2341DBC400FB0F68 /* Application */ = {
+		DBDE05362344937C00B461C1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DB3197472341D73200FB0F68 /* Info.plist */,
-				DB31973B2341D73000FB0F68 /* AppDelegate.swift */,
-				DB3197442341D73200FB0F68 /* LaunchScreen.storyboard */,
+				DBDE05372344937C00B461C1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DBDE05382344937C00B461C1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05392344937C00B461C1 /* Constant.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DBDE053A2344937C00B461C1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE053B2344937C00B461C1 /* LaunchScreen.storyboard */,
+				DBDE053D2344937C00B461C1 /* AppDelegate.swift */,
+				DBDE053E2344937C00B461C1 /* Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
 		};
-		DB31974E2341DBC800FB0F68 /* Data */ = {
+		DBDE053F2344937C00B461C1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DB3197562342022900FB0F68 /* Model */,
-				DB3197552341E1E400FB0F68 /* Source */,
+				DBDE05402344937C00B461C1 /* Source */,
+				DBDE05562344937C00B461C1 /* Model */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		DB31974F2341DBCB00FB0F68 /* Extensions */ = {
+		DBDE05402344937C00B461C1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05412344937C00B461C1 /* Local */,
+				DBDE05442344937C00B461C1 /* Remote */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		DBDE05412344937C00B461C1 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05422344937C00B461C1 /* Main.storyboard */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		DBDE05442344937C00B461C1 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05452344937C00B461C1 /* Api */,
+				DBDE054C2344937C00B461C1 /* Service */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		DBDE05452344937C00B461C1 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05462344937C00B461C1 /* Response */,
+				DBDE05482344937C00B461C1 /* Request */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		DBDE05462344937C00B461C1 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05472344937C00B461C1 /* CurrentWeatherResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		DBDE05482344937C00B461C1 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05492344937C00B461C1 /* CurrentWeatherApi */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DBDE05492344937C00B461C1 /* CurrentWeatherApi */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE054A2344937C00B461C1 /* CurrentRouter.swift */,
+				DBDE054B2344937C00B461C1 /* CurrentService.swift */,
+			);
+			path = CurrentWeatherApi;
+			sourceTree = "<group>";
+		};
+		DBDE054C2344937C00B461C1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE054D2344937C00B461C1 /* ServiceRequest.swift */,
+				DBDE054E2344937C00B461C1 /* AlamofireAppManager.swift */,
+				DBDE054F2344937C00B461C1 /* Protocol */,
+				DBDE05522344937C00B461C1 /* RouterUrlConvertible.swift */,
+				DBDE05532344937C00B461C1 /* Router.swift */,
+				DBDE05542344937C00B461C1 /* ServerResponseObject.swift */,
+				DBDE05552344937C00B461C1 /* Route.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DBDE054F2344937C00B461C1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05502344937C00B461C1 /* RequestParameterObject.swift */,
+				DBDE05512344937C00B461C1 /* CoreObject.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DBDE05562344937C00B461C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05572344937C00B461C1 /* WindModel.swift */,
+				DBDE05582344937C00B461C1 /* CoordModel.swift */,
+				DBDE05592344937C00B461C1 /* WeatherModel.swift */,
+				DBDE055A2344937C00B461C1 /* CloudModel.swift */,
+				DBDE055B2344937C00B461C1 /* MainTempModel.swift */,
+				DBDE055C2344937C00B461C1 /* SysModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DBDE05792344946600B461C1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		DB3197502341DBCD00FB0F68 /* Repositories */ = {
+		DBDE057A2344946600B461C1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DBDE057B2344946600B461C1 /* Source */,
+				DBDE05912344946600B461C1 /* Model */,
+				DB6D5D8B23458FCA009E4DC3 /* APIkey.swift */,
 			);
-			path = Repositories;
+			path = Data;
 			sourceTree = "<group>";
 		};
-		DB3197512341DBCF00FB0F68 /* Resources */ = {
+		DBDE057B2344946600B461C1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DB3197422341D73200FB0F68 /* Assets.xcassets */,
+				DBDE057C2344946600B461C1 /* Local */,
+				DBDE057F2344946600B461C1 /* Remote */,
 			);
-			path = Resources;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		DB3197522341DBD200FB0F68 /* Scenes */ = {
+		DBDE057C2344946600B461C1 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				DBDE057D2344946600B461C1 /* Main.storyboard */,
 			);
-			path = Scenes;
+			path = Local;
 			sourceTree = "<group>";
 		};
-		DB3197532341DBD500FB0F68 /* Utils */ = {
+		DBDE057F2344946600B461C1 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
-				DB1B6A662343389A0095D02A /* Constant.swift */,
+				DBDE05802344946600B461C1 /* Api */,
+				DBDE05872344946600B461C1 /* Service */,
 			);
-			path = Utils;
+			path = Remote;
 			sourceTree = "<group>";
 		};
-		DB3197542341DBD900FB0F68 /* Widgets */ = {
+		DBDE05802344946600B461C1 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05812344946600B461C1 /* Response */,
+				DBDE05832344946600B461C1 /* Request */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		DBDE05812344946600B461C1 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				DB8D2B7123449DFE009F32A2 /* CurrentWeatherResponse.swift */,
+				DB8D2B7923449F21009F32A2 /* FiveDayResponse.swift */,
+				DB8D2B7F2344A475009F32A2 /* UVindexResponse.swift */,
+				DB8D2B892344A5A5009F32A2 /* AirPolutionResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		DBDE05832344946600B461C1 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DB27F6B92344985300F2147B /* AirPolutionApi */,
+				DB27F6B82344985000F2147B /* UVindexApi */,
+				DB27F6B72344984D00F2147B /* FiveDayApi */,
+				DBDE05842344946600B461C1 /* CurrentWeatherApi */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DBDE05842344946600B461C1 /* CurrentWeatherApi */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05852344946600B461C1 /* CurrentRouter.swift */,
+				DBDE05862344946600B461C1 /* CurrentService.swift */,
+				DB27F6B52344984000F2147B /* CurrentWeatherParams.swift */,
+			);
+			path = CurrentWeatherApi;
+			sourceTree = "<group>";
+		};
+		DBDE05872344946600B461C1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05882344946600B461C1 /* ServiceRequest.swift */,
+				DBDE05892344946600B461C1 /* AlamofireAppManager.swift */,
+				DBDE058A2344946600B461C1 /* Protocol */,
+				DBDE058D2344946600B461C1 /* RouterUrlConvertible.swift */,
+				DBDE058E2344946600B461C1 /* Router.swift */,
+				DBDE058F2344946600B461C1 /* ServerResponseObject.swift */,
+				DBDE05902344946600B461C1 /* Route.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DBDE058A2344946600B461C1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE058B2344946600B461C1 /* RequestParameterObject.swift */,
+				DBDE058C2344946600B461C1 /* CoreObject.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DBDE05912344946600B461C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE05922344946600B461C1 /* WindModel.swift */,
+				DBDE05932344946600B461C1 /* CoordModel.swift */,
+				DBDE05942344946600B461C1 /* WeatherModel.swift */,
+				DBDE05952344946600B461C1 /* CloudModel.swift */,
+				DBDE05962344946600B461C1 /* MainTempModel.swift */,
+				DBDE05972344946600B461C1 /* SysModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DBDE05AD2344947B00B461C1 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Widgets;
 			sourceTree = "<group>";
 		};
-		DB3197552341E1E400FB0F68 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				DB319758234202A700FB0F68 /* Remote */,
-				DB319757234202A100FB0F68 /* Local */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		DB3197562342022900FB0F68 /* Model */ = {
+		DBDE05AE2344949100B461C1 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		DB319757234202A100FB0F68 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				DB31973F2341D73000FB0F68 /* Main.storyboard */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		DB319758234202A700FB0F68 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				DB31975A2342031500FB0F68 /* Service */,
-				DB3197592342031000FB0F68 /* Api */,
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
-		DB3197592342031000FB0F68 /* Api */ = {
-			isa = PBXGroup;
-			children = (
-				DB31975C234203A700FB0F68 /* Response */,
-				DB31975B234203A100FB0F68 /* Request */,
-			);
-			path = Api;
-			sourceTree = "<group>";
-		};
-		DB31975A2342031500FB0F68 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				DB31975E2342043F00FB0F68 /* Protocol */,
-				DB1B6A5A23432F5C0095D02A /* AlamofireAppManager.swift */,
-				DB1B6A5C23432FB60095D02A /* ServerResponseObject.swift */,
-				DB1B6A5E234330330095D02A /* Router.swift */,
-				DB1B6A60234330660095D02A /* RouterUrlConvertible.swift */,
-				DB1B6A642343309D0095D02A /* Route.swift */,
-				DB1B6A68234338F00095D02A /* ServiceRequest.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		DB31975B234203A100FB0F68 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		DB31975C234203A700FB0F68 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		DB31975E2342043F00FB0F68 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				DB31975F2342043F00FB0F68 /* RequestParameterObject.swift */,
-				DB3197602342043F00FB0F68 /* CoreObject.swift */,
-			);
-			path = Protocol;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,9 +542,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3197462341D73200FB0F68 /* LaunchScreen.storyboard in Resources */,
-				DB3197432341D73200FB0F68 /* Assets.xcassets in Resources */,
-				DB3197412341D73000FB0F68 /* Main.storyboard in Resources */,
+				DBDE059B2344946600B461C1 /* Main.storyboard in Resources */,
+				DBDE055D2344937C00B461C1 /* Assets.xcassets in Resources */,
+				DBDE055F2344937C00B461C1 /* LaunchScreen.storyboard in Resources */,
+				DBDE05622344937C00B461C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,36 +607,83 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3197682342044000FB0F68 /* RequestParameterObject.swift in Sources */,
-				DB1B6A5F234330330095D02A /* Router.swift in Sources */,
-				DB1B6A5D23432FB60095D02A /* ServerResponseObject.swift in Sources */,
-				DB1B6A652343309D0095D02A /* Route.swift in Sources */,
-				DB31973C2341D73000FB0F68 /* AppDelegate.swift in Sources */,
-				DB1B6A69234338F00095D02A /* ServiceRequest.swift in Sources */,
-				DB3197692342044000FB0F68 /* CoreObject.swift in Sources */,
-				DB1B6A61234330660095D02A /* RouterUrlConvertible.swift in Sources */,
-				DB1B6A672343389A0095D02A /* Constant.swift in Sources */,
-				DB1B6A5B23432F5C0095D02A /* AlamofireAppManager.swift in Sources */,
+				DBDE05722344937C00B461C1 /* MainTempModel.swift in Sources */,
+				DBDE056B2344937C00B461C1 /* Router.swift in Sources */,
+				DBDE05A62344946600B461C1 /* Route.swift in Sources */,
+				DBDE05692344937C00B461C1 /* CoreObject.swift in Sources */,
+				DB8D2B7E2344A0B0009F32A2 /* UVindexRouter.swift in Sources */,
+				DBDE05682344937C00B461C1 /* RequestParameterObject.swift in Sources */,
+				DB27F6B62344984000F2147B /* CurrentWeatherParams.swift in Sources */,
+				DB8D2B842344A578009F32A2 /* AirPolutionParams.swift in Sources */,
+				DBDE059D2344946600B461C1 /* CurrentRouter.swift in Sources */,
+				DB8D2B7A23449F21009F32A2 /* FiveDayResponse.swift in Sources */,
+				DB8D2B7C2344A094009F32A2 /* UVindexParams.swift in Sources */,
+				DBDE05652344937C00B461C1 /* CurrentService.swift in Sources */,
+				DBDE05A12344946600B461C1 /* RequestParameterObject.swift in Sources */,
+				DBDE056D2344937C00B461C1 /* Route.swift in Sources */,
+				DB8D2B7423449EDE009F32A2 /* FiveDayParams.swift in Sources */,
+				DBDE05672344937C00B461C1 /* AlamofireAppManager.swift in Sources */,
+				DBDE05AC2344946600B461C1 /* SysModel.swift in Sources */,
+				DBDE05A22344946600B461C1 /* CoreObject.swift in Sources */,
+				DBDE05A72344946600B461C1 /* WindModel.swift in Sources */,
+				DBDE05A92344946600B461C1 /* WeatherModel.swift in Sources */,
+				DB8D2B882344A58C009F32A2 /* AirPolutionService.swift in Sources */,
+				DBDE056E2344937C00B461C1 /* WindModel.swift in Sources */,
+				DB8D2B862344A582009F32A2 /* AirPolutionRouter.swift in Sources */,
+				DBDE05AA2344946600B461C1 /* CloudModel.swift in Sources */,
+				DBDE056C2344937C00B461C1 /* ServerResponseObject.swift in Sources */,
+				DB8D2B8A2344A5A5009F32A2 /* AirPolutionResponse.swift in Sources */,
+				DBDE05AB2344946600B461C1 /* MainTempModel.swift in Sources */,
+				DBDE05602344937C00B461C1 /* AppDelegate.swift in Sources */,
+				DBDE05A02344946600B461C1 /* AlamofireAppManager.swift in Sources */,
+				DB8D2B7823449F13009F32A2 /* FiveDayRouter.swift in Sources */,
+				DB6D5D8C23458FCA009E4DC3 /* APIkey.swift in Sources */,
+				DB8D2B7223449DFE009F32A2 /* CurrentWeatherResponse.swift in Sources */,
+				DBDE056A2344937C00B461C1 /* RouterUrlConvertible.swift in Sources */,
+				DBDE059E2344946600B461C1 /* CurrentService.swift in Sources */,
+				DBDE05642344937C00B461C1 /* CurrentRouter.swift in Sources */,
+				DBDE059F2344946600B461C1 /* ServiceRequest.swift in Sources */,
+				DBDE05A42344946600B461C1 /* Router.swift in Sources */,
+				DBDE05732344937C00B461C1 /* SysModel.swift in Sources */,
+				DBDE056F2344937C00B461C1 /* CoordModel.swift in Sources */,
+				DB8D2B7623449F07009F32A2 /* FiveDayService.swift in Sources */,
+				DBDE05A52344946600B461C1 /* ServerResponseObject.swift in Sources */,
+				DBDE055E2344937C00B461C1 /* Constant.swift in Sources */,
+				DBDE05702344937C00B461C1 /* WeatherModel.swift in Sources */,
+				DBDE05662344937C00B461C1 /* ServiceRequest.swift in Sources */,
+				DB8D2B822344A4BB009F32A2 /* UVindexService.swift in Sources */,
+				DBDE05A82344946600B461C1 /* CoordModel.swift in Sources */,
+				DBDE05A32344946600B461C1 /* RouterUrlConvertible.swift in Sources */,
+				DB8D2B802344A475009F32A2 /* UVindexResponse.swift in Sources */,
+				DBDE05712344937C00B461C1 /* CloudModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DB31973F2341D73000FB0F68 /* Main.storyboard */ = {
+		DBDE053B2344937C00B461C1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DB3197402341D73000FB0F68 /* Base */,
+				DBDE053C2344937C00B461C1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DBDE05422344937C00B461C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBDE05432344937C00B461C1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		DB3197442341D73200FB0F68 /* LaunchScreen.storyboard */ = {
+		DBDE057D2344946600B461C1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DB3197452341D73200FB0F68 /* Base */,
+				DBDE057E2344946600B461C1 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -525,7 +807,7 @@
 		};
 		DB31974B2341D73200FB0F68 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F05A4C46946A9134FDDD036 /* Pods-WeatherForcast.debug.xcconfig */;
+			baseConfigurationReference = 368E8F8B6AD71F7D48BD2645 /* Pods-WeatherForcast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -543,7 +825,7 @@
 		};
 		DB31974C2341D73200FB0F68 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2732A1BF55B769CBC37452C /* Pods-WeatherForcast.release.xcconfig */;
+			baseConfigurationReference = 37D052D7096C8201C5975962 /* Pods-WeatherForcast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
