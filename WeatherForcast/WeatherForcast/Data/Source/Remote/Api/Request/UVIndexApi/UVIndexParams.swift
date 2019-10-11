@@ -1,5 +1,5 @@
 //
-//  UVindexParams.swift
+//  UVIndexParams.swift
 //  WeatherForcast
 //
 //  Created by Tung Tran on 10/2/19.
@@ -8,18 +8,14 @@
 
 import Foundation
 
-final class UVindexParams: RequestParameterObject {
-    var lat: Double?
-    var lon: Double?
-    
-    func toJsonParam() -> [String : Any] {
+struct UVIndexParams: RequestParameterObject {
+    var lat: Double? = 0.0
+    var lon: Double? = 0.0
+
+    func toJsonParam() -> [String: Any] {
         var params = [String: Any]()
-        if let temp = lat {
-            params["lat"] = temp
-        }
-        if let temp = lon {
-            params["lon"] = temp
-        }
+        params["lat"] = lat ?? 0.0
+        params["lon"] = lon ?? 0.0
         return params
     }
 }

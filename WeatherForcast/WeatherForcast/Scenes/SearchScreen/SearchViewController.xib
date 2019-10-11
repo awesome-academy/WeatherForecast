@@ -37,11 +37,7 @@
                                     </constraints>
                                     <state key="normal" image="IQButtonBarArrowLeft.png"/>
                                     <connections>
-<<<<<<< HEAD
                                         <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="uaE-wS-NXc"/>
-=======
-                                        <action selector="backBtn:" destination="-1" eventType="touchUpInside" id="MAQ-XE-ov3"/>
->>>>>>> [task][18064]create_ui_search_screen
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhập tên hoặc mã thành phố bạn cần tìm kiếm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkD-e3-p6q">

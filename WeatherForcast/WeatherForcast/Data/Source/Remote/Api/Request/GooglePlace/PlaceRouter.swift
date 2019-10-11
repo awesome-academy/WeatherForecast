@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 
 final class PlaceRouter: Router {
-    
+
     func getPlace(param: PlaceParams) -> URLRequestConvertible {
-        let path = buildValidFullPathForRequest(.ggOutput)
+        let path = buildValidFullPathForRequest(.googleOutput)
         return buildUrlRequest(Route(method: .get, path: path, queryParams: param.toJsonParam()))
     }
 }

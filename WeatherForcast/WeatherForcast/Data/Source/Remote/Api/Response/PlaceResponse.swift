@@ -9,12 +9,14 @@
 import Foundation
 
 final class PlaceResponse: ServerResponseObject {
-    var places = [PlaceModel]()
-    
-    required init(data: [AnyHashable : Any]?) {
+    var places = [Place]()
+
+    required init(data: [AnyHashable: Any]?) {
         super.init(data: data)
-        if let dt = data?["predictions"] as? [[String: Any]] {
-            places = dt.map({PlaceModel(data: $0)})
+        if let placeReceived = data?["predictions"] as? [[String: Any]] {
+            places = placeReceived.map {
+                Place(data: $0)
+            }
         }
     }
 }

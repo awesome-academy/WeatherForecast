@@ -9,10 +9,6 @@
 import Foundation
 
 extension Double {
-<<<<<<< HEAD
-=======
-    
->>>>>>> [task][18064]create_ui_search_screen
     func getStringTwoDecimal() -> String {
         return String(format: "%.2f", self)
     }

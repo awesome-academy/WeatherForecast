@@ -10,18 +10,18 @@ import Foundation
 
 final class AirPolutionResponse: ServerResponseObject {
     var time: String?
-    var location: CoordModel?
-    var dataList = [PolutionModel]()
+    var location: Coordinate?
+    var dataList = [AirPolution]()
 
     required init(data: [AnyHashable: Any]?) {
         super.init(data: data)
         time = data?["time"] as? String
         if let locationData = data?["location"] as? [String: Any] {
-            location = CoordModel(data: locationData)
+            location = Coordinate(data: locationData)
         }
         if let dataReceived = data?["data"] as? [[String: Any]] {
             dataList = dataReceived.map {
-                PolutionModel(data: $0)
+                AirPolution(data: $0)
             }
         }
     }

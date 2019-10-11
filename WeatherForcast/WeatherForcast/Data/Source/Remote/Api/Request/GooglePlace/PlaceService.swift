@@ -11,7 +11,7 @@ import Alamofire
 
 final class PlaceService {
     private let router = PlaceRouter()
-    
+
     func getPlace(param: PlaceParams) -> ServiceRequest<PlaceResponse> {
         let request = ServiceRequest<PlaceResponse>()
         AlamofireAppmanager.shared.request(router.getPlace(param: param)).responseJSON { (response: DataResponse<Any>) in
