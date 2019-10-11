@@ -10,21 +10,21 @@ import Foundation
 import Alamofire
 
 class Router {
-    
+
     static var baseUrl = "api.openweathermap.org"
-    
+
     func buildUrlRequest(_ route: Route) -> URLRequestConvertible {
         return RouterUrlConvertible(route: route)
     }
-    
+
     func buildValidFullPathForRequest(_ path: PathURL) -> String {
         guard let url = URL(string: Router.baseUrl) else {
             return path.rawValue
         }
         return url.appendingPathComponent(path.rawValue).absoluteString
     }
-    
-    
+
+
     //
     enum PathURL: String {
         case currentWeather = "/data/2.5/weather?" //param: key, city name (q), city id ( id )

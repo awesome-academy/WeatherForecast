@@ -12,8 +12,8 @@ final class AirPolutionResponse: ServerResponseObject {
     var time: String?
     var location: CoordModel?
     var dataList = [PolutionModel]()
-    
-    required init(data: [AnyHashable : Any]?) {
+
+    required init(data: [AnyHashable: Any]?) {
         super.init(data: data)
         time = data?["time"] as? String
         if let locationData = data?["location"] as? [String: Any] {

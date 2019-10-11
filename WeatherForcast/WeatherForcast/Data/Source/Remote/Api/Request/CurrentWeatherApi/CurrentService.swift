@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 final class CurrentService {
-        private let router = CurrentRouter()
-    
+    private let router = CurrentRouter()
+
     func getCurrentWeather(param: CurrentWeatherParams) -> ServiceRequest<CurrentWeatherResponse> {
         let request = ServiceRequest<CurrentWeatherResponse>()
         AlamofireAppmanager.shared.request(router.getCurrentWeather(param: param)).responseJSON { (response: DataResponse<Any>) in

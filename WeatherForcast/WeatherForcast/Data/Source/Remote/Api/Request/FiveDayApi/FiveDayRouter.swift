@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 final class FiveDayRouter: Router {
-    
+
     func getFiveDayData(param: FiveDayParams) -> URLRequestConvertible {
         let path = buildValidFullPathForRequest(.fiveDaysThreeHours)
         return buildUrlRequest(Route.init(method: .get, path: path, queryParams: param.toJsonParam()))

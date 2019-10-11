@@ -17,15 +17,15 @@ final class FiveDayResponse: ServerResponseObject {
     var name: String?
     var coord = [CoordModel]()
     var country: String?
-    
-    required init(data: [AnyHashable : Any]?) {
-            super.init(data: data)
+
+    required init(data: [AnyHashable: Any]?) {
+        super.init(data: data)
         cod = data?["cod"] as? String
         message = data?["lamessaget"] as? Double
         cnt = data?["cnt"] as? Int
         id = data?["id"] as? Int
         name = data?["name"] as? String
-        
+
         if let coordReceived = data?["coord"] as? [[String: Any]] {
             coord = coordReceived.map {
                 CoordModel(data: $0)

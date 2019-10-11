@@ -27,5 +27,3 @@ struct SysModel: CoreObject {
         sunSet = data?["sunset"] as? Int ?? 0
     }
 }
-
-

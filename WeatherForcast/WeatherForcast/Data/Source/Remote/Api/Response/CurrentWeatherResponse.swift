@@ -16,8 +16,8 @@ final class CurrentWeatherResponse: ServerResponseObject {
     var id: Int?
     var name: String?
     var cod: Int?
-    
-    required init(data: [AnyHashable : Any]?) {
+
+    required init(data: [AnyHashable: Any]?) {
         super.init(data: data)
         if let coordReceived = data?["coord"] as? [[String: Any]] {
             listData?.coordData = coordReceived.map {
@@ -49,7 +49,7 @@ final class CurrentWeatherResponse: ServerResponseObject {
                 SysModel(data: $0)
             }
         }
-        base  = data?["base"] as? String
+        base = data?["base"] as? String
         visibility = data?["visibility"] as? Int
         dt = data?["dt"] as? Int
         id = data?["id"] as? Int
