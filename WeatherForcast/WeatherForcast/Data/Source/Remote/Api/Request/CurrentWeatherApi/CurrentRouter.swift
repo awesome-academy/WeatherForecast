@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import  Alamofire
+import Alamofire
 
 final class CurrentRouter: Router {
-    
+
     func getCurrentWeather(param: CurrentWeatherParams) -> URLRequestConvertible {
         let path = buildValidFullPathForRequest(.currentWeather)
         return buildUrlRequest(Route(method: .get
-            , path: path, queryParams: param.toJsonParam()))
+                                     , path: path, queryParams: param.toJsonParam()))
     }
 }

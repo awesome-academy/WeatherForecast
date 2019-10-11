@@ -10,7 +10,8 @@ import Foundation
 import Alamofire
 
 final class AirPolutionRouter: Router {
-    func getAirPolutionData(lat: Double,lon: Double) -> URLRequestConvertible {
+
+    func getAirPolutionData(lat: Double, lon: Double) -> URLRequestConvertible {
         let stringPath = "\(lat),\(lon)" + kAirPolution
         let path = buildValidFullPathForRequest(.airPolution) + stringPath
         return buildUrlRequest(Route(method: .get, path: path))

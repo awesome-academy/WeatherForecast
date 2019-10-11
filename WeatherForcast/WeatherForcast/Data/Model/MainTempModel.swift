@@ -29,4 +29,3 @@ struct MainTempModel: CoreObject {
         tempKf = data?["temp_kf"] as? Double ?? 0.0
     }
 }
-
