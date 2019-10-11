@@ -9,8 +9,8 @@
 import Foundation
 import Alamofire
 
-final class UVindexRouter: Router {
-    func getUVdata(param: UVindexParams) -> URLRequestConvertible {
+final class UVIndexRouter: Router {
+    func getUVdata(param: UVIndexParams) -> URLRequestConvertible {
         let path = buildValidFullPathForRequest(.uvIndex)
         return buildUrlRequest(Route(method: .get, path: path, queryParams: param.toJsonParam()))
     }
