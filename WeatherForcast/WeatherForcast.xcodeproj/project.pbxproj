@@ -359,7 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				DB27F6B92344985300F2147B /* AirPolutionApi */,
-				DB27F6B82344985000F2147B /* UVindexApi */,
 				DB27F6B72344984D00F2147B /* FiveDayApi */,
 				DBDE05842344946600B461C1 /* CurrentWeatherApi */,
 			);

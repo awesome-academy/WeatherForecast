@@ -7,11 +7,3 @@
 //
 
 import Foundation
-
-final class UVindexParams: RequestParameterObject {
-    
-    func toJsonParam() -> [String : Any] {
-        var params = [String: Any]()
-        return params
-    }
-}
