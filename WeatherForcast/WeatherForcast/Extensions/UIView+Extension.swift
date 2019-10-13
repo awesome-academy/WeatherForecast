@@ -21,7 +21,6 @@ extension UIView {
         get {
             return layer.cornerRadius
         }
-
         set {
             layer.cornerRadius = newValue
         }
@@ -32,7 +31,6 @@ extension UIView {
         get {
             return layer.borderWidth
         }
-
         set {
             layer.borderWidth = newValue
         }
@@ -46,7 +44,6 @@ extension UIView {
             }
             return nil
         }
-
         set {
             return layer.borderColor = newValue?.cgColor
         }
@@ -57,7 +54,6 @@ extension UIView {
         get {
             return layer.shadowRadius
         }
-
         set {
             layer.shadowRadius = newValue
         }
@@ -68,7 +64,6 @@ extension UIView {
         get {
             return layer.shadowOpacity
         }
-
         set {
             layer.shadowOpacity = newValue
         }
@@ -79,7 +74,6 @@ extension UIView {
         get {
             return layer.shadowOffset
         }
-
         set {
             layer.shadowOffset = newValue
         }
@@ -93,7 +87,6 @@ extension UIView {
             }
             return nil
         }
-
         set {
             return layer.shadowColor = newValue?.cgColor
         }
@@ -103,6 +96,7 @@ extension UIView {
         self.layer.cornerRadius = (self.frame.width / 2)
         self.layer.masksToBounds = true
     }
-
 }
+
+
 

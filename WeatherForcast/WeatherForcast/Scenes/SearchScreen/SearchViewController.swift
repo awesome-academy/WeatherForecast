@@ -13,6 +13,11 @@ final class SearchViewController: BaseViewController {
     @IBOutlet private weak var searchTableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
 
+    private let service = CurrentService()
+    private let placeService = PlaceService()
+    var result: CurrentWeather?
+    var placeList = [Place]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -31,6 +36,22 @@ final class SearchViewController: BaseViewController {
 
     @IBAction func backButtonAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+
+    private func getWeather(param: CurrentWeatherParams) {
+        service.getCurrentWeather(param: param).cloudResponse { [weak self](response: CurrentWeatherResponse) in
+            self?.result = response.object
+        }.cloudError { (errMsg, errCode) in
+            print("\(errMsg)")
+        }
+    }
+
+    private func getPlace(param: PlaceParams) {
+        placeService.getPlace(param: param).cloudResponse { [weak self](response: PlaceResponse) in
+            self?.placeList = response.places
+        }.cloudError { (msg, code) in
+            print("\(msg)")
+        }
     }
 }
 
@@ -54,9 +75,5 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return AnimationController(animationDuration: 0.4, animationType: .present)
-    }
-
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return AnimationController(animationDuration: 0.4, animationType: .dismiss)
     }
 }

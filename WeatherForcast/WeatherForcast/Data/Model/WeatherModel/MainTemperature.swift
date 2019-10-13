@@ -1,14 +1,14 @@
 //
-//  MainTempModel.swift
+//  MainTemperature.swift
 //  WeatherForcast
 //
-//  Created by Tung Tran on 10/2/19.
+//  Created by Tung Tran on 10/11/19.
 //  Copyright © 2019 Sun. All rights reserved.
 //
 
 import Foundation
 
-struct MainTempModel: CoreObject {
+struct MainTemperature: CoreObject {
     var temp = 0.0
     var humidity = 0
     var tempMin = 0.0
@@ -17,9 +17,9 @@ struct MainTempModel: CoreObject {
     var seaLevel = 0.0
     var tempKf = 0.0
     var grndLevel = 0.0
-    
-    init(data: [AnyHashable : Any]?) {
-        temp = data?["temp"] as? Double ??  0.0
+
+    init(data: [AnyHashable: Any]?) {
+        temp = data?["temp"] as? Double ?? 0.0
         humidity = data?["humidity"] as? Int ?? 0
         tempMin = data?["temp_min"] as? Double ?? 0.0
         tempMax = data?["temp_max"] as? Double ?? 0.0

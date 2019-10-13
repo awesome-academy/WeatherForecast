@@ -35,7 +35,6 @@ class BaseViewController: UIViewController {
         controller.modalTransitionStyle = transitionStyle
         controller.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         self.present(controller, animated: true, completion: nil)
-        //        self.navigationController?.pushViewController(controller, animated: true)
     }
 
     func alertShow(title: String?, message: String?, view: UIViewController, handler: (() -> Void)? = nil) {
@@ -48,6 +47,5 @@ class BaseViewController: UIViewController {
         alertController.addAction(okButton)
         view.present(alertController, animated: true, completion: nil)
     }
-
 
 }

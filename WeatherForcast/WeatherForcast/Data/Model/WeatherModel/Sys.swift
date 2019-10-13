@@ -1,14 +1,14 @@
 //
-//  SysModel.swift
+//  Sys.swift
 //  WeatherForcast
 //
-//  Created by Tung Tran on 10/2/19.
+//  Created by Tung Tran on 10/11/19.
 //  Copyright © 2019 Sun. All rights reserved.
 //
 
 import Foundation
 
-struct SysModel: CoreObject {
+struct Sys: CoreObject {
     var pod = ""
     var type = 0
     var id = 0
@@ -16,8 +16,8 @@ struct SysModel: CoreObject {
     var country = ""
     var sunRise = 0
     var sunSet = 0
-    
-    init(data: [AnyHashable : Any]?) {
+
+    init(data: [AnyHashable: Any]?) {
         pod = data?["pod"] as? String ?? ""
         type = data?["type"] as? Int ?? 0
         id = data?["id"] as? Int ?? 0

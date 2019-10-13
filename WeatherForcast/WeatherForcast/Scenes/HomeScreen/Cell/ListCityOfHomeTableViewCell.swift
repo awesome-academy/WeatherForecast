@@ -9,6 +9,7 @@
 import UIKit
 
 final class ListCityOfHomeTableViewCell: UITableViewCell {
+
     @IBOutlet private weak var wrapView: UIView!
     @IBOutlet private weak var backGroundView: UIImageView!
     @IBOutlet private weak var cityLabel: UILabel!

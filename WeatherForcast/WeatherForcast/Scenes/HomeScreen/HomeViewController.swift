@@ -9,9 +9,10 @@
 import UIKit
 
 final class HomeViewController: BaseViewController {
+
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var homeTableView: UITableView!
-    private var weatherList = [ListWeatherModel]()
+    private var weatherList = [ListWeatherInfo]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ final class HomeViewController: BaseViewController {
     private func configureTable() {
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        homeTableView.registerCells(ListCityOfHomeTableViewCell.className)
     }
 
     private func configureUI() {
@@ -33,13 +35,13 @@ final class HomeViewController: BaseViewController {
     }
 }
 
+
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
     }
 }
 

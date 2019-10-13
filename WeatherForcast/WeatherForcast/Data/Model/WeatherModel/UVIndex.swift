@@ -1,5 +1,5 @@
 //
-//  UVModel.swift
+//  UVIndex.swift
 //  WeatherForcast
 //
 //  Created by Tung Tran on 10/11/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UVModel: CoreObject {
+struct UVIndex: CoreObject {
     var lat = 0.0
     var lon = 0.0
     var dateIso = ""
