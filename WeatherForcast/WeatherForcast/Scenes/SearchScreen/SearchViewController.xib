@@ -31,11 +31,11 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu8-cF-xwT">
                                     <rect key="frame" x="8" y="4.5" width="30" height="30"/>
+                                    <color key="backgroundColor" red="1" green="0.075493018159999994" blue="0.045836979149999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="5H1-oD-8VX"/>
                                         <constraint firstAttribute="width" constant="30" id="prO-8w-sSP"/>
                                     </constraints>
-                                    <state key="normal" image="IQButtonBarArrowLeft.png"/>
                                     <connections>
                                         <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="uaE-wS-NXc"/>
                                     </connections>
@@ -93,7 +93,4 @@
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
-    <resources>
-        <image name="IQButtonBarArrowLeft.png" width="12" height="21"/>
-    </resources>
 </document>

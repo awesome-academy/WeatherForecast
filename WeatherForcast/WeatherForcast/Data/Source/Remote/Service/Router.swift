@@ -34,7 +34,7 @@ class Router {
 
     enum PathURL: String {
         case currentWeather = "/data/2.5/weather?"
-        case fiveDaysThreeHours = "/data/2.5/forecast?"
+        case fiveDaysThreeHours = "/data/2.5/forecast"
         case uvIndex = "/data/2.5/uvi?"
         case airPolution = "/pollution/v1/co/"
         case googleOutput = "json"

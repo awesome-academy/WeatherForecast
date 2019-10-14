@@ -19,6 +19,11 @@
 		DB27F6B62344984000F2147B /* CurrentWeatherParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27F6B52344984000F2147B /* CurrentWeatherParams.swift */; };
 		DB46576C2345E62100CB91C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB46576A2345E62100CB91C7 /* HomeViewController.swift */; };
 		DB46576D2345E62100CB91C7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB46576B2345E62100CB91C7 /* HomeViewController.xib */; };
+		DB61664C235412EB009D48D4 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61664B235412EB009D48D4 /* Int+Extension.swift */; };
+		DB61664E23541454009D48D4 /* PassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61664D23541454009D48D4 /* PassData.swift */; };
+		DB6166502354159B009D48D4 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61664F2354159B009D48D4 /* String+Extension.swift */; };
+		DB616654235416DB009D48D4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB616652235416DB009D48D4 /* DetailViewController.swift */; };
+		DB616655235416DB009D48D4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB616653235416DB009D48D4 /* DetailViewController.xib */; };
 		DB6D5D8C23458FCA009E4DC3 /* APIkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D5D8B23458FCA009E4DC3 /* APIkey.swift */; };
 		DB83DE98235023F5004D8F9C /* UVIndexRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB83DE97235023F5004D8F9C /* UVIndexRouter.swift */; };
 		DB83DE9A23502439004D8F9C /* UVIndexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB83DE9923502439004D8F9C /* UVIndexService.swift */; };
@@ -89,6 +94,11 @@
 		DB3197382341D73000FB0F68 /* WeatherForcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB46576A2345E62100CB91C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DB46576B2345E62100CB91C7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		DB61664B235412EB009D48D4 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		DB61664D23541454009D48D4 /* PassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassData.swift; sourceTree = "<group>"; };
+		DB61664F2354159B009D48D4 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		DB616652235416DB009D48D4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DB616653235416DB009D48D4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		DB6D5D8B23458FCA009E4DC3 /* APIkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIkey.swift; sourceTree = "<group>"; };
 		DB83DE97235023F5004D8F9C /* UVIndexRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndexRouter.swift; sourceTree = "<group>"; };
 		DB83DE9923502439004D8F9C /* UVIndexService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndexService.swift; sourceTree = "<group>"; };
@@ -240,6 +250,7 @@
 		DB4657682345E5F700CB91C7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DB616651235416C5009D48D4 /* DetailScreen */,
 				DB0DE198234AD2E000930179 /* Base */,
 				DB0DE193234AD25C00930179 /* SearchScreen */,
 				DB4657692345E5FC00CB91C7 /* HomeScreen */,
@@ -255,6 +266,15 @@
 				DB46576B2345E62100CB91C7 /* HomeViewController.xib */,
 			);
 			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		DB616651235416C5009D48D4 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DB616652235416DB009D48D4 /* DetailViewController.swift */,
+				DB616653235416DB009D48D4 /* DetailViewController.xib */,
+			);
+			path = DetailScreen;
 			sourceTree = "<group>";
 		};
 		DB83DE90235023C2004D8F9C /* UVIndexApi */ = {
@@ -355,6 +375,8 @@
 				DB83DE9F2350257E004D8F9C /* TableView+Extension.swift */,
 				DB83DEA523502EC2004D8F9C /* CollectionView+Extension.swift */,
 				DB83DEA7235030FC004D8F9C /* UIColor+Extension.swift */,
+				DB61664B235412EB009D48D4 /* Int+Extension.swift */,
+				DB61664F2354159B009D48D4 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,6 +384,7 @@
 		DBDE057A2344946600B461C1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DBDE058A2344946600B461C1 /* Protocol */,
 				DBDE057B2344946600B461C1 /* Source */,
 				DBDE05912344946600B461C1 /* Model */,
 				DB6D5D8B23458FCA009E4DC3 /* APIkey.swift */,
@@ -444,7 +467,6 @@
 			children = (
 				DBDE05882344946600B461C1 /* ServiceRequest.swift */,
 				DBDE05892344946600B461C1 /* AlamofireAppManager.swift */,
-				DBDE058A2344946600B461C1 /* Protocol */,
 				DBDE058D2344946600B461C1 /* RouterUrlConvertible.swift */,
 				DBDE058E2344946600B461C1 /* Router.swift */,
 				DBDE058F2344946600B461C1 /* ServerResponseObject.swift */,
@@ -458,6 +480,7 @@
 			children = (
 				DBDE058B2344946600B461C1 /* RequestParameterObject.swift */,
 				DBDE058C2344946600B461C1 /* CoreObject.swift */,
+				DB61664D23541454009D48D4 /* PassData.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -548,6 +571,7 @@
 			files = (
 				DBDE059B2344946600B461C1 /* Main.storyboard in Resources */,
 				DBDE055F2344937C00B461C1 /* LaunchScreen.storyboard in Resources */,
+				DB616655235416DB009D48D4 /* DetailViewController.xib in Resources */,
 				DBBF851E23506BEF002597CF /* SearchViewController.xib in Resources */,
 				DB0DE1A0234AD3DE00930179 /* ListCityOfHomeTableViewCell.xib in Resources */,
 				DBBF8515235069CD002597CF /* Assets.xcassets in Resources */,
@@ -641,6 +665,7 @@
 				DB8D2B8A2344A5A5009F32A2 /* AirPolutionResponse.swift in Sources */,
 				DBDE05602344937C00B461C1 /* AppDelegate.swift in Sources */,
 				DBDE05A02344946600B461C1 /* AlamofireAppManager.swift in Sources */,
+				DB6166502354159B009D48D4 /* String+Extension.swift in Sources */,
 				DBBF851B23506A01002597CF /* PlaceRouter.swift in Sources */,
 				DB83DE9A23502439004D8F9C /* UVIndexService.swift in Sources */,
 				DB8D2B7823449F13009F32A2 /* FiveDayRouter.swift in Sources */,
@@ -658,10 +683,12 @@
 				DB8D2B7623449F07009F32A2 /* FiveDayService.swift in Sources */,
 				DBBF853C23507792002597CF /* MainTemperature.swift in Sources */,
 				DB83DE98235023F5004D8F9C /* UVIndexRouter.swift in Sources */,
+				DB616654235416DB009D48D4 /* DetailViewController.swift in Sources */,
 				DB0DE19F234AD3DE00930179 /* ListCityOfHomeTableViewCell.swift in Sources */,
 				DB83DEA8235030FC004D8F9C /* UIColor+Extension.swift in Sources */,
 				DBBF851123506613002597CF /* PlaceModel.swift in Sources */,
 				DB0DE1AA234AE27800930179 /* Double+Extension.swift in Sources */,
+				DB61664C235412EB009D48D4 /* Int+Extension.swift in Sources */,
 				DBDE05A52344946600B461C1 /* ServerResponseObject.swift in Sources */,
 				DBBF85262350761C002597CF /* Coordinate.swift in Sources */,
 				DBBF85382350773E002597CF /* CurrentWeather.swift in Sources */,
@@ -669,6 +696,7 @@
 				DB0DE1A6234AE27800930179 /* UIView+Extension.swift in Sources */,
 				DBDE055E2344937C00B461C1 /* Constant.swift in Sources */,
 				DBDE05A32344946600B461C1 /* RouterUrlConvertible.swift in Sources */,
+				DB61664E23541454009D48D4 /* PassData.swift in Sources */,
 				DB83DEA02350257E004D8F9C /* TableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
