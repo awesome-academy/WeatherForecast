@@ -13,9 +13,10 @@ final class SearchViewController: BaseViewController {
     @IBOutlet private weak var searchTableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
 
+    var delegate: PassDataBetweenViewController?
+    private var passDataBack: ((CurrentWeather) -> Void)?
     private let service = CurrentService()
     private let placeService = PlaceService()
-    var result: CurrentWeather?
     var placeList = [Place]()
 
     override func viewDidLoad() {
@@ -30,7 +31,8 @@ final class SearchViewController: BaseViewController {
     }
 
     private func configureUI() {
-        transitioningDelegate = self
+        searchBar.delegate = self
+        searchBar.becomeFirstResponder()
         titleLabel.text = "Nhập tên thành phố bạn cần tìm kiếm"
     }
 
@@ -40,7 +42,11 @@ final class SearchViewController: BaseViewController {
 
     private func getWeather(param: CurrentWeatherParams) {
         service.getCurrentWeather(param: param).cloudResponse { [weak self](response: CurrentWeatherResponse) in
-            self?.result = response.object
+            guard let data = response.object else {
+                return
+            }
+            self?.delegate?.passDataBetweenViewController(data: data)
+            self?.navigationController?.popViewController(animated: true)
         }.cloudError { (errMsg, errCode) in
             print("\(errMsg)")
         }
@@ -71,9 +77,19 @@ extension SearchViewController: UITableViewDataSource {
     }
 }
 
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text: String = searchBar.text?.removeStartEndWhiteSpaces() else {
+            return
+        }
+        var param = CurrentWeatherParams()
+        param.cityName = text
+        searchBar.endEditing(true)
+        getWeather(param: param)
 
-extension SearchViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return AnimationController(animationDuration: 0.4, animationType: .present)
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     }
 }
+

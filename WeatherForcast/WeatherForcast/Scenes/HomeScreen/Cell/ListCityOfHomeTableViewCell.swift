@@ -20,9 +20,14 @@ final class ListCityOfHomeTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func fillData(city: String, temp: String, time: String) {
-        tempLabel.text = temp
-        cityLabel.text = city
-        timeLabel.text = time
+    private func configureUi() {
+
+    }
+
+    func fillData(data: CurrentWeather?) {
+        guard let dataReceived = data else { return }
+        tempLabel.text = dataReceived.mainData?.temp.getCelciusFromKelvin()
+        cityLabel.text = dataReceived.name
+        timeLabel.text = dataReceived.dateTimeCurrent?.getStringDateFromUnix()
     }
 }

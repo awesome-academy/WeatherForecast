@@ -18,7 +18,7 @@ final class FiveDayResponse: ServerResponseObject {
     required init(data: [AnyHashable: Any]?) {
         super.init(data: data)
         cod = data?["cod"] as? String ?? ""
-        message = data?["lamessaget"] as? Double ?? 0.0
+        message = data?["message"] as? Double ?? 0.0
         cnt = data?["cnt"] as? Int ?? 0
         if let listReceived = data?["list"] as? [[String: Any]] {
             listData = listReceived.map {
