@@ -8,7 +8,6 @@
 
 import UIKit
 import netfox
-import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,9 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureNetfox()
-        configureIQkeyboardManager()
+        changeColorPageControl()
         configureMainWindow()
-        // Override point for customization after application launch.
         return true
     }
 
@@ -45,13 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
+
     private func configureMainWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = createRootVc()
         window?.makeKeyAndVisible()
     }
-    
+
     private func createRootVc() -> UINavigationController {
         let homeVc = HomeViewController()
         let navigationController = UINavigationController(rootViewController: homeVc)
@@ -59,19 +57,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.isTranslucent = false
         return navigationController
     }
-    
+
     private func configureNetfox() {
         NFX.sharedInstance().start()
     }
-    
-    private func configureIQkeyboardManager() {
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.previousNextDisplayMode = IQPreviousNextDisplayMode.alwaysHide
-        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
-        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "OK"
-        IQKeyboardManager.shared.enableDebugging = true
+
+    private func changeColorPageControl() {
+        let pageControl = UIPageControl.appearance()
+        pageControl.currentPageIndicatorTintColor = .white
+        pageControl.pageIndicatorTintColor = .lightGray
+        pageControl.hidesForSinglePage = true
     }
-
 }
-

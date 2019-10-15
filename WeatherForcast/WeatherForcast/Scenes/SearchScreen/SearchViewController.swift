@@ -43,6 +43,7 @@ final class SearchViewController: BaseViewController {
     private func getWeather(param: CurrentWeatherParams) {
         service.getCurrentWeather(param: param).cloudResponse { [weak self](response: CurrentWeatherResponse) in
             guard let data = response.object else {
+                print("city not found")
                 return
             }
             self?.delegate?.passDataBetweenViewController(data: data)
@@ -84,7 +85,6 @@ extension SearchViewController: UISearchBarDelegate {
         }
         var param = CurrentWeatherParams()
         param.cityName = text
-        searchBar.endEditing(true)
         getWeather(param: param)
 
     }
