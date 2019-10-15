@@ -46,9 +46,11 @@ final class HomeViewController: BaseViewController {
         }
     }
 
-    private func moveToDetail(indexPath: Int) {
+    private func moveToDetail(with index: Int) {
         let detailVc = DetailViewController()
-        present(detailVc, animated: true)
+        detailVc.currentViewControllerIndex = index
+        detailVc.fillData(weatherList)
+        navigationController?.pushViewController(detailVc, animated: true)
     }
 }
 
@@ -59,7 +61,8 @@ extension HomeViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        moveToDetail(indexPath: indexPath.row)
+        let selectedIndex = indexPath.row
+        self.moveToDetail(with: selectedIndex)
     }
 }
 

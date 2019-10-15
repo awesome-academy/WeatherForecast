@@ -42,6 +42,8 @@
 		DB8D2B862344A582009F32A2 /* AirPolutionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */; };
 		DB8D2B882344A58C009F32A2 /* AirPolutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */; };
 		DB8D2B8A2344A5A5009F32A2 /* AirPolutionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B892344A5A5009F32A2 /* AirPolutionResponse.swift */; };
+		DBA73AA8235558D400E036BD /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA73AA6235558D400E036BD /* DataViewController.swift */; };
+		DBA73AA9235558D400E036BD /* DataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA73AA7235558D400E036BD /* DataViewController.xib */; };
 		DBBDE1AA234C6E6A00E921BD /* PlaceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBDE1A9234C6E6A00E921BD /* PlaceResponse.swift */; };
 		DBBF851123506613002597CF /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF851023506613002597CF /* PlaceModel.swift */; };
 		DBBF8515235069CD002597CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBF8514235069CD002597CF /* Assets.xcassets */; };
@@ -117,6 +119,8 @@
 		DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionRouter.swift; sourceTree = "<group>"; };
 		DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionService.swift; sourceTree = "<group>"; };
 		DB8D2B892344A5A5009F32A2 /* AirPolutionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionResponse.swift; sourceTree = "<group>"; };
+		DBA73AA6235558D400E036BD /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		DBA73AA7235558D400E036BD /* DataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataViewController.xib; sourceTree = "<group>"; };
 		DBBDE1A9234C6E6A00E921BD /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
 		DBBF851023506613002597CF /* PlaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		DBBF8514235069CD002597CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -271,10 +275,20 @@
 		DB616651235416C5009D48D4 /* DetailScreen */ = {
 			isa = PBXGroup;
 			children = (
+				DB61665623545E83009D48D4 /* SubViewPageViewController */,
 				DB616652235416DB009D48D4 /* DetailViewController.swift */,
 				DB616653235416DB009D48D4 /* DetailViewController.xib */,
 			);
 			path = DetailScreen;
+			sourceTree = "<group>";
+		};
+		DB61665623545E83009D48D4 /* SubViewPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DBA73AA6235558D400E036BD /* DataViewController.swift */,
+				DBA73AA7235558D400E036BD /* DataViewController.xib */,
+			);
+			path = SubViewPageViewController;
 			sourceTree = "<group>";
 		};
 		DB83DE90235023C2004D8F9C /* UVIndexApi */ = {
@@ -570,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBDE059B2344946600B461C1 /* Main.storyboard in Resources */,
+				DBA73AA9235558D400E036BD /* DataViewController.xib in Resources */,
 				DBDE055F2344937C00B461C1 /* LaunchScreen.storyboard in Resources */,
 				DB616655235416DB009D48D4 /* DetailViewController.xib in Resources */,
 				DBBF851E23506BEF002597CF /* SearchViewController.xib in Resources */,
@@ -614,7 +629,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WeatherForcast/Pods-WeatherForcast-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 				"${BUILT_PRODUCTS_DIR}/netfox/netfox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -622,7 +637,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/netfox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,6 +653,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBBF8530235076DF002597CF /* Rain.swift in Sources */,
+				DBA73AA8235558D400E036BD /* DataViewController.swift in Sources */,
 				DBDE05A62344946600B461C1 /* Route.swift in Sources */,
 				DB83DE9C23502452004D8F9C /* UVIndexParams.swift in Sources */,
 				DB27F6B62344984000F2147B /* CurrentWeatherParams.swift in Sources */,

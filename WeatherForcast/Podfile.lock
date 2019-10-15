@@ -1,24 +1,24 @@
 PODS:
   - Alamofire (4.7.3)
-  - IQKeyboardManagerSwift (6.2.0)
   - netfox (1.13.0)
+  - Then (2.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.2)
-  - IQKeyboardManagerSwift
   - netfox
+  - Then
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - IQKeyboardManagerSwift
     - netfox
+    - Then
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   netfox: 44e626a4fe8bd1cde774346b03edb84a593077de
+  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
 
-PODFILE CHECKSUM: 991931c49a9d6997037e1ccdf8efdfad8453ea5f
+PODFILE CHECKSUM: 2138b1aa9ee6ea5fcb6f655301ed133663311141
 
 COCOAPODS: 1.5.3
