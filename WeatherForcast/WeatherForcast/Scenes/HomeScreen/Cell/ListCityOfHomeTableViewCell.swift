@@ -30,7 +30,7 @@ final class ListCityOfHomeTableViewCell: UITableViewCell, NibReusable {
 
     func fillData(data: CurrentWeather?) {
         guard let dataReceived = data else { return }
-        tempLabel.text = dataReceived.mainData?.temp.getCelciusFromKelvin()
+        tempLabel.text = dataReceived.mainData?.temp.getStringNoDecimal()
         cityLabel.text = dataReceived.name
         timeLabel.text = dataReceived.dateTimeCurrent?.getStringDateFromUnix()
     }

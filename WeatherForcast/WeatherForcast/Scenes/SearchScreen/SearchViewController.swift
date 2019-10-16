@@ -14,7 +14,6 @@ final class SearchViewController: BaseViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
 
     var delegate: PassDataBetweenViewController?
-    private var passDataBack: ((CurrentWeather) -> Void)?
     var placeList = [Place]()
     var currentWeather: CurrentWeather?
 
@@ -72,6 +71,15 @@ extension SearchViewController: UISearchBarDelegate {
         guard let text: String = searchBar.text?.removeStartEndWhiteSpaces() else {
             return
         }
+        var param = CurrentWeatherParams()
+        param.cityName = text
+
+        serviceHelper?.getWeather(param: param, onSuccess: { [weak self](response) in
+            self?.delegate?.passDataBetweenViewController(data: response)
+            self?.navigationController?.popViewController(animated: true)
+        }, onFailed: { (errMsg, errCode) in
+            print("\(errMsg ?? "")")
+        })
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

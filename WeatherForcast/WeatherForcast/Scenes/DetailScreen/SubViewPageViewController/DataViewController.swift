@@ -42,18 +42,12 @@ final class DataViewController: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        dataTableview.reloadData()
-    }
-
     func fillData(data: CurrentWeather?) {
         guard let dataReceived = data else {
             return
         }
         currentWeather = dataReceived
     }
-
 
     private func configureView() {
         view.backgroundColor = .clear
@@ -72,13 +66,13 @@ extension DataViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 1
+            return bannerRow
         case 1:
-            return 1
+            return temperatureRow
         case 2:
-            return 5
+            return fiveDayROw
         case 3:
-            return 1
+            return detailRow
         default:
             return 0
         }
