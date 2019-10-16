@@ -14,8 +14,6 @@ final class DataViewController: UIViewController {
 
     var index: Int
     private var currentWeather: CurrentWeather?
-    private var fiveDayWeather = [FiveDayWeather]()
-    private let service = FiveDayService()
 
     init(with index: Int) {
         self.index = index
@@ -56,6 +54,7 @@ final class DataViewController: UIViewController {
         currentWeather = dataReceived
     }
 
+
     private func configureView() {
         view.backgroundColor = .clear
     }
@@ -71,7 +70,18 @@ extension DataViewController: UITableViewDelegate {
 extension DataViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 1
+        case 2:
+            return 5
+        case 3:
+            return 1
+        default:
+            return 0
+        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -88,7 +98,7 @@ extension DataViewController: UITableViewDataSource {
             return cell
         case 1:
             let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: TemperatureTableViewCell.self).then {
-                $0.fillData(fiveDayWeather)
+                $0.fillData(currentWeather)
             }
             return cell
         default:
