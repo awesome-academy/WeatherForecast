@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Reusable
 
-final class ListCityOfHomeTableViewCell: UITableViewCell {
+final class ListCityOfHomeTableViewCell: UITableViewCell, NibReusable {
 
     @IBOutlet private weak var wrapView: UIView!
     @IBOutlet private weak var backGroundView: UIImageView!
@@ -18,10 +19,13 @@ final class ListCityOfHomeTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUi()
     }
 
     private func configureUi() {
-
+        timeLabel.font = UIFont.systemFont(ofSize: 17)
+        cityLabel.font = UIFont.systemFont(ofSize: 25)
+        tempLabel.font = UIFont.systemFont(ofSize: 55)
     }
 
     func fillData(data: CurrentWeather?) {

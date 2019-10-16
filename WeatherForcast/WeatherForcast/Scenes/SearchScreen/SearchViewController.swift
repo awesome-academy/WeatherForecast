@@ -63,12 +63,14 @@ final class SearchViewController: BaseViewController {
 }
 
 extension SearchViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }
 
 extension SearchViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -79,6 +81,7 @@ extension SearchViewController: UITableViewDataSource {
 }
 
 extension SearchViewController: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text: String = searchBar.text?.removeStartEndWhiteSpaces() else {
             return

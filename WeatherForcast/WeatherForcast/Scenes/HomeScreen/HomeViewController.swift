@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Reusable
 
 final class HomeViewController: BaseViewController {
 
@@ -26,7 +27,7 @@ final class HomeViewController: BaseViewController {
     private func configureTable() {
         homeTableView.delegate = self
         homeTableView.dataSource = self
-        homeTableView.registerCells(ListCityOfHomeTableViewCell.className)
+        homeTableView.register(cellType: ListCityOfHomeTableViewCell.self)
     }
 
     private func configureUI() {
@@ -56,6 +57,7 @@ final class HomeViewController: BaseViewController {
 
 
 extension HomeViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -67,23 +69,41 @@ extension HomeViewController: UITableViewDelegate {
 }
 
 extension HomeViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weatherList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = homeTableView.dequeueReusableCell(withIdentifier: ListCityOfHomeTableViewCell.className, for: indexPath) as? ListCityOfHomeTableViewCell else {
-            return UITableViewCell()
+        let cell = homeTableView.dequeueReusableCell(for: indexPath, cellType: ListCityOfHomeTableViewCell.self).then {
+            $0.fillData(data: weatherList[indexPath.row])
         }
-        cell.fillData(data: weatherList[indexPath.row])
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let delete = UIContextualAction(style: .destructive, title: "Xoá") { [weak self] (action, view, nil) in
+            self?.weatherList.remove(at: indexPath.row)
+            self?.homeTableView.reloadData()
+        }
+        return UISwipeActionsConfiguration(actions: [delete])
     }
 }
 
 extension HomeViewController: PassDataBetweenViewController {
+    
     func passDataBetweenViewController(data: CurrentWeather) {
-        weatherList.append(data)
+        guard !weatherList.isEmpty else {
+            weatherList.append(data)
+            homeTableView.reloadData()
+            return
+        }
+        if let index = weatherList.enumerated().first(where: { $0.element.id == data.id })?.offset {
+            weatherList[index] = data
+        } else {
+            weatherList.append(data)
+        }
         homeTableView.reloadData()
     }
 }
-
