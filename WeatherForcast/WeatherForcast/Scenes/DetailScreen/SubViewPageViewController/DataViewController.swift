@@ -28,6 +28,7 @@ final class DataViewController: UIViewController {
         super.viewDidLoad()
         configureView()
         configureTable()
+//        dataTableview.reloadData()
     }
 
     private func configureTable() {
@@ -47,6 +48,7 @@ final class DataViewController: UIViewController {
             return
         }
         currentWeather = dataReceived
+//        dataTableview.reloadData()
     }
 
     private func configureView() {
@@ -90,11 +92,11 @@ extension DataViewController: UITableViewDataSource {
                 $0.fillData(currentWeather)
             }
             return cell
-        case 1:
-            let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: TemperatureTableViewCell.self).then {
-                $0.fillData(currentWeather)
-            }
-            return cell
+//        case 1:
+//            let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: TemperatureTableViewCell.self).then {
+//                $0.fillData(currentWeather)
+//            }
+//            return cell
         default:
             return UITableViewCell()
         }

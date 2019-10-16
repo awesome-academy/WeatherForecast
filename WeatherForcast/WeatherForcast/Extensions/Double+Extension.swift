@@ -13,6 +13,10 @@ extension Double {
         return String(format: "%.0f", self)
     }
 
+    func getStringOneDecimal() -> String {
+        return String(format: "%.1f", self)
+    }
+
     func getCelciusFromKelvin() -> String {
         let celcius = String(format: "%.0f", (self - 273.15))
         return celcius

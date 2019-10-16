@@ -21,8 +21,7 @@ final class SearchViewController: BaseViewController {
         return ServiceHelper.getInstance(CurrentService(),
                                          FiveDayService(),
                                          PlaceService(),
-                                         UVIndexService(),
-                                         AirPolutionService())
+                                         UVIndexService())
     }()
 
     override func viewDidLoad() {
