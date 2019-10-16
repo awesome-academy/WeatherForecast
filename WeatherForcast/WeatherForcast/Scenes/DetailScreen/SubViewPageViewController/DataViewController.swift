@@ -60,14 +60,14 @@ final class DataViewController: UIViewController {
 }
 
 extension DataViewController: UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }
 
 extension DataViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
