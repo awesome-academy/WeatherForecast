@@ -75,6 +75,7 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = homeTableView.dequeueReusableCell(for: indexPath, cellType: ListCityOfHomeTableViewCell.self).then {
             $0.fillData(data: weatherList[indexPath.row])
         }
@@ -94,6 +95,7 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: PassDataBetweenViewController {
     
     func passDataBetweenViewController(data: CurrentWeather) {
+        
         guard !weatherList.isEmpty else {
             weatherList.append(data)
             homeTableView.reloadData()

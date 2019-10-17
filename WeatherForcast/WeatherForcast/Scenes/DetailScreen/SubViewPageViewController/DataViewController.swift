@@ -56,7 +56,6 @@ final class DataViewController: UIViewController {
         currentWeather = dataReceived
     }
 
-
     private func configureView() {
         view.backgroundColor = .clear
     }

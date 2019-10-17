@@ -17,18 +17,19 @@ final class SearchViewController: BaseViewController {
     private var passDataBack: ((CurrentWeather) -> Void)?
     var placeList = [Place]()
     var currentWeather: CurrentWeather?
-    private var serviceHelper: ServiceHelper?
-    private let currentService = CurrentService()
-    private let fiveDayService = FiveDayService()
-    private let placeService = PlaceService()
-    private let uvService = UVIndexService()
-    private let airSerivce = AirPolutionService()
+
+    private let serviceHelper: ServiceHelper? = {
+        return ServiceHelper.getInstance(CurrentService(),
+                                         FiveDayService(),
+                                         PlaceService(),
+                                         UVIndexService(),
+                                         AirPolutionService())
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         configureTableView()
-        serviceHelper = ServiceHelper.getInstance(currentService, fiveDayService, placeService, uvService, airSerivce)
     }
 
     private func configureTableView() {
@@ -73,13 +74,6 @@ extension SearchViewController: UISearchBarDelegate {
         }
         var param = CurrentWeatherParams()
         param.cityName = text
-        guard let data = serviceHelper?.getWeather(param: param) else {
-            return
-        }
-        view.endEditing(true)
-        self.delegate?.passDataBetweenViewController(data: data)
-        self.navigationController?.popViewController(animated: true)
-
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

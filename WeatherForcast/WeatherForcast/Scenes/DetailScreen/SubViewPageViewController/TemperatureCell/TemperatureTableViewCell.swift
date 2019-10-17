@@ -47,6 +47,7 @@ extension TemperatureTableViewCell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let cell = temperatureCollection.dequeueReusableCell(for: indexPath, cellType: TemperatureCollectionViewCell.self).then {
             $0.fillData(weather[indexPath.row])
         }
