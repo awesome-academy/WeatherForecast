@@ -13,7 +13,9 @@ final class DataViewController: UIViewController {
     @IBOutlet private weak var dataTableview: UITableView!
 
     var index: Int
-    var weatherData: CurrentWeather?
+    private var currentWeather: CurrentWeather?
+    private var fiveDayWeather = [FiveDayWeather]()
+    private let service = FiveDayService()
 
     init(with index: Int) {
         self.index = index
@@ -51,7 +53,7 @@ final class DataViewController: UIViewController {
         guard let dataReceived = data else {
             return
         }
-        weatherData = dataReceived
+        currentWeather = dataReceived
     }
 
     private func configureView() {
@@ -81,7 +83,12 @@ extension DataViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then {
-                $0.fillData(weatherData)
+                $0.fillData(currentWeather)
+            }
+            return cell
+        case 1:
+            let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: TemperatureTableViewCell.self).then {
+                $0.fillData(fiveDayWeather)
             }
             return cell
         default:

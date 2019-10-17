@@ -12,10 +12,23 @@ extension Int {
     func getStringDateFromUnix() -> String {
         let myDouble = Double(self)
         let date = Date(timeIntervalSince1970: myDouble)
-        let dateFormat = DateFormatter()
-        dateFormat.dateStyle = .short
-        dateFormat.timeStyle = .short
-        dateFormat.dateFormat = "MMM d, h:mm a"
+        let dateFormat = DateFormatter().then {
+            $0.dateStyle = .short
+            $0.timeStyle = .short
+            $0.dateFormat = "MMM d, h:mm a"
+        }
+        let stringDate = dateFormat.string(from: date)
+        return stringDate
+    }
+
+    func getStringHourFromUnix() -> String {
+        let myDouble = Double(self)
+        let date = Date(timeIntervalSince1970: myDouble)
+        let dateFormat = DateFormatter().then {
+            $0.dateStyle = .short
+            $0.timeStyle = .short
+            $0.dateFormat = "hh"
+        }
         let stringDate = dateFormat.string(from: date)
         return stringDate
     }
