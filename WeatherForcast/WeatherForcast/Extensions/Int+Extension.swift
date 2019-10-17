@@ -19,4 +19,15 @@ extension Int {
         let stringDate = dateFormat.string(from: date)
         return stringDate
     }
+
+    func getStringHourFromUnix() -> String {
+        let myDouble = Double(self)
+        let date = Date(timeIntervalSince1970: myDouble)
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = .short
+        dateFormat.timeStyle = .short
+        dateFormat.dateFormat = "hh"
+        let stringDate = dateFormat.string(from: date)
+        return stringDate
+    }
 }

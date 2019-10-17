@@ -15,14 +15,20 @@ final class SearchViewController: BaseViewController {
 
     var delegate: PassDataBetweenViewController?
     private var passDataBack: ((CurrentWeather) -> Void)?
-    private let service = CurrentService()
-    private let placeService = PlaceService()
     var placeList = [Place]()
+    var currentWeather: CurrentWeather?
+    private var serviceHelper: ServiceHelper?
+    private let currentService = CurrentService()
+    private let fiveDayService = FiveDayService()
+    private let placeService = PlaceService()
+    private let uvService = UVIndexService()
+    private let airSerivce = AirPolutionService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         configureTableView()
+        serviceHelper = ServiceHelper.getInstance(currentService, fiveDayService, placeService, uvService, airSerivce)
     }
 
     private func configureTableView() {
@@ -39,38 +45,17 @@ final class SearchViewController: BaseViewController {
     @IBAction func backButtonAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-
-    private func getWeather(param: CurrentWeatherParams) {
-        service.getCurrentWeather(param: param).cloudResponse { [weak self](response: CurrentWeatherResponse) in
-            guard let data = response.object else {
-                print("city not found")
-                return
-            }
-            self?.delegate?.passDataBetweenViewController(data: data)
-            self?.navigationController?.popViewController(animated: true)
-        }.cloudError { (errMsg, errCode) in
-            print("\(errMsg)")
-        }
-    }
-
-    private func getPlace(param: PlaceParams) {
-        placeService.getPlace(param: param).cloudResponse { [weak self](response: PlaceResponse) in
-            self?.placeList = response.places
-        }.cloudError { (msg, code) in
-            print("\(msg)")
-        }
-    }
 }
 
 extension SearchViewController: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }
 
 extension SearchViewController: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -81,14 +66,19 @@ extension SearchViewController: UITableViewDataSource {
 }
 
 extension SearchViewController: UISearchBarDelegate {
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text: String = searchBar.text?.removeStartEndWhiteSpaces() else {
             return
         }
         var param = CurrentWeatherParams()
         param.cityName = text
-        getWeather(param: param)
+        guard let data = serviceHelper?.getWeather(param: param) else {
+            return
+        }
+        view.endEditing(true)
+        self.delegate?.passDataBetweenViewController(data: data)
+        self.navigationController?.popViewController(animated: true)
 
     }
 

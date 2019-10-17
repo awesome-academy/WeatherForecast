@@ -39,7 +39,6 @@
 		DB8D2B7623449F07009F32A2 /* FiveDayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7523449F07009F32A2 /* FiveDayService.swift */; };
 		DB8D2B7823449F13009F32A2 /* FiveDayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7723449F13009F32A2 /* FiveDayRouter.swift */; };
 		DB8D2B7A23449F21009F32A2 /* FiveDayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7923449F21009F32A2 /* FiveDayResponse.swift */; };
-		DB8D2B842344A578009F32A2 /* AirPolutionParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B832344A578009F32A2 /* AirPolutionParams.swift */; };
 		DB8D2B862344A582009F32A2 /* AirPolutionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */; };
 		DB8D2B882344A58C009F32A2 /* AirPolutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */; };
 		DB8D2B8A2344A5A5009F32A2 /* AirPolutionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B892344A5A5009F32A2 /* AirPolutionResponse.swift */; };
@@ -73,6 +72,7 @@
 		DBBF85382350773E002597CF /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF85372350773E002597CF /* CurrentWeather.swift */; };
 		DBBF853A23507754002597CF /* UVIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF853923507754002597CF /* UVIndex.swift */; };
 		DBBF853C23507792002597CF /* MainTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF853B23507792002597CF /* MainTemperature.swift */; };
+		DBD38B1223580B6200E74A10 /* ServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD38B1123580B6200E74A10 /* ServiceHelper.swift */; };
 		DBDE055E2344937C00B461C1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05392344937C00B461C1 /* Constant.swift */; };
 		DBDE055F2344937C00B461C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBDE053B2344937C00B461C1 /* LaunchScreen.storyboard */; };
 		DBDE05602344937C00B461C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE053D2344937C00B461C1 /* AppDelegate.swift */; };
@@ -125,7 +125,6 @@
 		DB8D2B7523449F07009F32A2 /* FiveDayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayService.swift; sourceTree = "<group>"; };
 		DB8D2B7723449F13009F32A2 /* FiveDayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayRouter.swift; sourceTree = "<group>"; };
 		DB8D2B7923449F21009F32A2 /* FiveDayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayResponse.swift; sourceTree = "<group>"; };
-		DB8D2B832344A578009F32A2 /* AirPolutionParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionParams.swift; sourceTree = "<group>"; };
 		DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionRouter.swift; sourceTree = "<group>"; };
 		DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionService.swift; sourceTree = "<group>"; };
 		DB8D2B892344A5A5009F32A2 /* AirPolutionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionResponse.swift; sourceTree = "<group>"; };
@@ -159,6 +158,7 @@
 		DBBF85372350773E002597CF /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		DBBF853923507754002597CF /* UVIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndex.swift; sourceTree = "<group>"; };
 		DBBF853B23507792002597CF /* MainTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTemperature.swift; sourceTree = "<group>"; };
+		DBD38B1123580B6200E74A10 /* ServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHelper.swift; sourceTree = "<group>"; };
 		DBDE05392344937C00B461C1 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DBDE053C2344937C00B461C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBDE053D2344937C00B461C1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,7 +245,6 @@
 		DB27F6B92344985300F2147B /* AirPolutionApi */ = {
 			isa = PBXGroup;
 			children = (
-				DB8D2B832344A578009F32A2 /* AirPolutionParams.swift */,
 				DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */,
 				DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */,
 			);
@@ -478,6 +477,7 @@
 				DBDE057B2344946600B461C1 /* Source */,
 				DBDE05912344946600B461C1 /* Model */,
 				DB6D5D8B23458FCA009E4DC3 /* APIkey.swift */,
+				DBD38B1123580B6200E74A10 /* ServiceHelper.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -742,7 +742,6 @@
 				DB83DEA623502EC2004D8F9C /* CollectionView+Extension.swift in Sources */,
 				DBBF852A2350767F002597CF /* ListWeatherInfo.swift in Sources */,
 				DB0DE196234AD26F00930179 /* SearchViewController.swift in Sources */,
-				DB8D2B842344A578009F32A2 /* AirPolutionParams.swift in Sources */,
 				DBA73AB42355A4A500E036BD /* TemperatureTableViewCell.swift in Sources */,
 				DBBF852823507632002597CF /* FiveDayWeather.swift in Sources */,
 				DBDE059D2344946600B461C1 /* CurrentRouter.swift in Sources */,
@@ -765,6 +764,7 @@
 				DBDE05602344937C00B461C1 /* AppDelegate.swift in Sources */,
 				DB7F61C923570B8800E6DA07 /* TemperatureCollectionViewCell.swift in Sources */,
 				DBDE05A02344946600B461C1 /* AlamofireAppManager.swift in Sources */,
+				DBD38B1223580B6200E74A10 /* ServiceHelper.swift in Sources */,
 				DB6166502354159B009D48D4 /* String+Extension.swift in Sources */,
 				DBBF851B23506A01002597CF /* PlaceRouter.swift in Sources */,
 				DB83DE9A23502439004D8F9C /* UVIndexService.swift in Sources */,

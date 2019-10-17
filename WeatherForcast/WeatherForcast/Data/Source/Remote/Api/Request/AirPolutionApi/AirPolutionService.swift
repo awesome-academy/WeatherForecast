@@ -11,9 +11,11 @@ import Alamofire
 
 final class AirPolutionService {
     private let router = AirPolutionRouter()
-    func getAirPolutionData(lat: Double, lon: Double) -> ServiceRequest<AirPolutionResponse> {
+
+    func getAirPolutionData(param: Coordinate) -> ServiceRequest<AirPolutionResponse> {
         let request = ServiceRequest<AirPolutionResponse>()
-        AlamofireAppmanager.shared.request(router.getAirPolutionData(lat: lat, lon: lon)).responseJSON { (response: DataResponse<Any>) in
+        AlamofireAppmanager.shared.request(router.getAirPolutionData(lat: param.lat, lon: param.lon
+        )).responseJSON { (response: DataResponse<Any>) in
             request.handleResponseJSON(response: response)
         }
         return request

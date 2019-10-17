@@ -15,7 +15,7 @@ final class DetailViewController: BaseViewController {
 
     var currentViewControllerIndex = 0
     private var pageController: UIPageViewController?
-    var dataSource = [CurrentWeather]()
+    private var dataSource = [CurrentWeather]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
