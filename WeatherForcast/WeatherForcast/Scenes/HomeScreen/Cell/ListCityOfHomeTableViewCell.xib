@@ -29,27 +29,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:16" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIz-n0-JnG" userLabel="TimeLabel">
-                                        <rect key="frame" x="16" y="18" width="41" height="21"/>
+                                        <rect key="frame" x="12" y="18" width="41" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hà Nội" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxW-4s-XqD" userLabel="CityLabel">
-                                        <rect key="frame" x="16" y="51" width="70" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <rect key="frame" x="12" y="51" width="73" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90'" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIp-FC-MNN" userLabel="TempLabel">
-                                        <rect key="frame" x="214" y="9" width="86" height="72"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIp-FC-MNN" userLabel="TempLabel">
+                                        <rect key="frame" x="202.5" y="9" width="97.5" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="BxW-4s-XqD" firstAttribute="leading" secondItem="OGf-E0-Yq5" secondAttribute="leading" constant="16" id="2h0-dC-orI"/>
+                                    <constraint firstItem="BxW-4s-XqD" firstAttribute="leading" secondItem="OGf-E0-Yq5" secondAttribute="leading" constant="12" id="2h0-dC-orI"/>
                                     <constraint firstAttribute="trailing" secondItem="rIp-FC-MNN" secondAttribute="trailing" constant="20" id="CYg-qS-3Lk"/>
                                     <constraint firstItem="BxW-4s-XqD" firstAttribute="top" secondItem="pIz-n0-JnG" secondAttribute="bottom" constant="12" id="DPk-HW-SyR"/>
-                                    <constraint firstItem="pIz-n0-JnG" firstAttribute="leading" secondItem="OGf-E0-Yq5" secondAttribute="leading" constant="16" id="DfB-qG-Scr"/>
+                                    <constraint firstItem="pIz-n0-JnG" firstAttribute="leading" secondItem="OGf-E0-Yq5" secondAttribute="leading" constant="12" id="DfB-qG-Scr"/>
                                     <constraint firstItem="rIp-FC-MNN" firstAttribute="centerY" secondItem="OGf-E0-Yq5" secondAttribute="centerY" id="Nqe-ec-eHl"/>
                                     <constraint firstItem="pIz-n0-JnG" firstAttribute="top" secondItem="OGf-E0-Yq5" secondAttribute="top" constant="18" id="r0j-Rt-DfM"/>
                                 </constraints>

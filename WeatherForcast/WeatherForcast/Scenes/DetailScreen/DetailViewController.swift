@@ -25,10 +25,10 @@ final class DetailViewController: BaseViewController {
     private func configurePageViewController() {
         pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil).then {
             $0.view.backgroundColor = .clear
-            $0.delegate = self
             $0.dataSource = self
-            $0.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+            $0.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 30)
             let dataViewController = DataViewController(with: currentViewControllerIndex)
+            dataViewController.fillData(data: dataSource[currentViewControllerIndex])
             $0.setViewControllers([dataViewController], direction: .forward, animated: true, completion: nil)
             $0.didMove(toParent: self)
         }
@@ -48,6 +48,7 @@ final class DetailViewController: BaseViewController {
 }
 
 extension DetailViewController: UIPageViewControllerDataSource {
+
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return currentViewControllerIndex
     }
@@ -63,7 +64,9 @@ extension DetailViewController: UIPageViewControllerDataSource {
         if dataView.index == 0 {
             return nil
         }
-        return DataViewController(with: dataView.index - 1)
+        let dataViewController = DataViewController(with: dataView.index - 1)
+        dataViewController.fillData(data: dataSource[dataView.index - 1])
+        return dataViewController
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -73,9 +76,10 @@ extension DetailViewController: UIPageViewControllerDataSource {
         if dataView.index >= dataSource.count - 1 {
             return nil
         }
-        return DataViewController(with: dataView.index + 1)
+        let dataViewController = DataViewController(with: dataView.index + 1)
+        dataViewController.fillData(data: dataSource[dataView.index + 1])
+        return dataViewController
     }
 }
 
-extension DetailViewController: UIPageViewControllerDelegate {
-}
+
