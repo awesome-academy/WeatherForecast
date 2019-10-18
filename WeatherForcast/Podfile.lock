@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.7.3)
   - netfox (1.13.0)
+  - ReachabilitySwift (4.3.0)
   - Reusable (4.0.4):
     - Reusable/Storyboard (= 4.0.4)
     - Reusable/View (= 4.0.4)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7.2)
   - netfox
+  - ReachabilitySwift
   - Reusable
   - Then
 
@@ -18,15 +20,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - netfox
+    - ReachabilitySwift
     - Reusable
     - Then
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   netfox: 44e626a4fe8bd1cde774346b03edb84a593077de
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   Reusable: 7fc772097df3e5fc86f59d8a7af9708e49b5ff55
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
 
-PODFILE CHECKSUM: fa01d7e962f94cf9e393da09cc18f3cafcf42fe2
+PODFILE CHECKSUM: 56b36326ec87d664a0328f52966d480a4ef1c71c
 
 COCOAPODS: 1.5.3

@@ -18,7 +18,6 @@ final class HomeViewController: BaseViewController {
     private let service = FiveDayService()
     private var fiveDayList = [FiveDayWeather]()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -55,7 +54,6 @@ final class HomeViewController: BaseViewController {
         navigationController?.pushViewController(detailVc, animated: true)
     }
 }
-
 
 extension HomeViewController: UITableViewDelegate {
 

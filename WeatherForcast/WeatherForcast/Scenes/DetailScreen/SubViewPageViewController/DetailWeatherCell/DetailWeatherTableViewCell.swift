@@ -56,7 +56,8 @@ final class DetailWeatherTableViewCell: UITableViewCell, NibReusable {
         }
         sunRiseTime.text = dataReceived.sysData?.sunRise.getStringHoursMinutesFromUnix()
         sunSetTime.text = dataReceived.sysData?.sunSet.getStringHoursMinutesFromUnix()
-        humidityIndex.text = "\(dataReceived.mainData?.humidity ?? 0)"
+        humidityIndex.text = "\(dataReceived.mainData?.humidity ?? 0) %"
+
         if let windSpd = dataReceived.windData?.speed.getStringOneDecimal() {
             windSpeed.text = windSpd + "m/s"
         }
@@ -66,12 +67,12 @@ final class DetailWeatherTableViewCell: UITableViewCell, NibReusable {
         }
 
         viewDistance.text = ("\(dataReceived.visibility ?? 0) m")
-        if let pressureIndex = dataReceived.mainData?.pressure.getStringOneDecimal() {
-            pressureLabel.text = pressureIndex + "hPa"
+        if let pressIndex = dataReceived.mainData?.pressure.getStringOneDecimal() {
+            pressureIndex.text = pressIndex + " hPa"
         }
 
         if let seaIndex = dataReceived.mainData?.seaLevel.getStringOneDecimal() {
-            seaPressureIndex.text = seaIndex + "hPa"
+            seaPressureIndex.text = seaIndex + " hPa"
         }
     }
 

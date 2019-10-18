@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		524F45385834A3BEDDB94326 /* Pods_WeatherForcast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D225E539FD71BBA828237A05 /* Pods_WeatherForcast.framework */; };
+		DB02BAA6235C18E200A21CBC /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB02BAA5235C18E200A21CBC /* Date+Extension.swift */; };
 		DB0DE196234AD26F00930179 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0DE194234AD26F00930179 /* SearchViewController.swift */; };
 		DB0DE19A234AD2F200930179 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0DE199234AD2F200930179 /* BaseViewController.swift */; };
 		DB0DE19C234AD35400930179 /* NsObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0DE19B234AD35400930179 /* NsObject+Extensions.swift */; };
@@ -91,6 +92,7 @@
 		368E8F8B6AD71F7D48BD2645 /* Pods-WeatherForcast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForcast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherForcast/Pods-WeatherForcast.debug.xcconfig"; sourceTree = "<group>"; };
 		37D052D7096C8201C5975962 /* Pods-WeatherForcast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherForcast.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherForcast/Pods-WeatherForcast.release.xcconfig"; sourceTree = "<group>"; };
 		D225E539FD71BBA828237A05 /* Pods_WeatherForcast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherForcast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB02BAA5235C18E200A21CBC /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DB0DE194234AD26F00930179 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DB0DE199234AD2F200930179 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DB0DE19B234AD35400930179 /* NsObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NsObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				DB83DEA7235030FC004D8F9C /* UIColor+Extension.swift */,
 				DB61664B235412EB009D48D4 /* Int+Extension.swift */,
 				DB61664F2354159B009D48D4 /* String+Extension.swift */,
+				DB02BAA5235C18E200A21CBC /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WeatherForcast/Pods-WeatherForcast-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 				"${BUILT_PRODUCTS_DIR}/netfox/netfox.framework",
@@ -705,6 +709,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/netfox.framework",
@@ -742,6 +747,7 @@
 				DBA73ABC2355A57000E036BD /* DetailWeatherTableViewCell.swift in Sources */,
 				DBBF8520235075A6002597CF /* City.swift in Sources */,
 				DBBF853623507722002597CF /* Wind.swift in Sources */,
+				DB02BAA6235C18E200A21CBC /* Date+Extension.swift in Sources */,
 				DB0DE1AC234B28FB00930179 /* AnimationController.swift in Sources */,
 				DBBF853A23507754002597CF /* UVIndex.swift in Sources */,
 				DBF179B42359692A000B57AB /* PlacesTableViewCell.swift in Sources */,

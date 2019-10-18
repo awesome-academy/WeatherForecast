@@ -47,10 +47,10 @@ final class ServiceHelper {
     }
 
     func getPlace(param: PlaceParams,
-                  onSuccess: @escaping ((_ data: [Place]) -> Void),
+                  onSuccess: @escaping ((_ data: PlaceResponse) -> Void),
                   onFailed: @escaping Failure) {
         placeService.getPlace(param: param).cloudResponse { (response: PlaceResponse) in
-            onSuccess(response.places)
+            onSuccess(response)
         }.cloudError { (errMsg, errCode) in
             onFailed(errMsg, errCode)
         }
@@ -70,7 +70,7 @@ final class ServiceHelper {
                    onSuccess: @escaping ((_ data: UVIndex) -> Void),
                    onFailed: @escaping Failure) {
         uvService.getUVData(param: param).cloudResponse { (response: UVIndexResponse) in
-            guard let data = response.uvIndex.first else {
+            guard let data = response.uvIndex else {
                 onFailed(response.statusMessage, response.statusCode)
                 return
             }

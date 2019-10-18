@@ -22,7 +22,9 @@ final class TemperatureCollectionViewCell: UICollectionViewCell, NibReusable {
         guard let dataReceived = data else {
             return
         }
-        temperatureLabel.text = dataReceived.mainData?.temp.getCelciusFromKelvin()
+        if let temperature = dataReceived.mainData?.temp.getStringNoDecimal() {
+            temperatureLabel.text = temperature + "°"
+        }
         timeLabel.text = dataReceived.dateTime.getStringHourFromUnix()
     }
 }
