@@ -44,4 +44,16 @@ extension Int {
         let stringDate = dateFormat.string(from: date)
         return stringDate
     }
+
+    func getStringHoursMinutesFromUnix() -> String {
+        let myDouble = Double(self)
+        let date = Date(timeIntervalSince1970: myDouble)
+        let dateFormat = DateFormatter().then {
+            $0.dateStyle = .short
+            $0.timeStyle = .short
+            $0.dateFormat = "HH:mm"
+        }
+        let stringDate = dateFormat.string(from: date)
+        return stringDate
+    }
 }

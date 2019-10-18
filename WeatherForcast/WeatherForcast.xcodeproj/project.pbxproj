@@ -37,9 +37,6 @@
 		DB8D2B7623449F07009F32A2 /* FiveDayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7523449F07009F32A2 /* FiveDayService.swift */; };
 		DB8D2B7823449F13009F32A2 /* FiveDayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7723449F13009F32A2 /* FiveDayRouter.swift */; };
 		DB8D2B7A23449F21009F32A2 /* FiveDayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B7923449F21009F32A2 /* FiveDayResponse.swift */; };
-		DB8D2B862344A582009F32A2 /* AirPolutionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */; };
-		DB8D2B882344A58C009F32A2 /* AirPolutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */; };
-		DB8D2B8A2344A5A5009F32A2 /* AirPolutionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D2B892344A5A5009F32A2 /* AirPolutionResponse.swift */; };
 		DBA73AA8235558D400E036BD /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA73AA6235558D400E036BD /* DataViewController.swift */; };
 		DBA73AA9235558D400E036BD /* DataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA73AA7235558D400E036BD /* DataViewController.xib */; };
 		DBA73AAD2355A3F800E036BD /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA73AAB2355A3F800E036BD /* BannerTableViewCell.swift */; };
@@ -62,7 +59,6 @@
 		DBBF85262350761C002597CF /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF85252350761C002597CF /* Coordinate.swift */; };
 		DBBF852823507632002597CF /* FiveDayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF852723507632002597CF /* FiveDayWeather.swift */; };
 		DBBF852A2350767F002597CF /* ListWeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF85292350767F002597CF /* ListWeatherInfo.swift */; };
-		DBBF852E235076C6002597CF /* AirPolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF852D235076C6002597CF /* AirPolution.swift */; };
 		DBBF8530235076DF002597CF /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF852F235076DF002597CF /* Rain.swift */; };
 		DBBF8532235076F6002597CF /* Sys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF8531235076F6002597CF /* Sys.swift */; };
 		DBBF85342350770E002597CF /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF85332350770E002597CF /* Weather.swift */; };
@@ -123,9 +119,6 @@
 		DB8D2B7523449F07009F32A2 /* FiveDayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayService.swift; sourceTree = "<group>"; };
 		DB8D2B7723449F13009F32A2 /* FiveDayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayRouter.swift; sourceTree = "<group>"; };
 		DB8D2B7923449F21009F32A2 /* FiveDayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayResponse.swift; sourceTree = "<group>"; };
-		DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionRouter.swift; sourceTree = "<group>"; };
-		DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionService.swift; sourceTree = "<group>"; };
-		DB8D2B892344A5A5009F32A2 /* AirPolutionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolutionResponse.swift; sourceTree = "<group>"; };
 		DBA73AA6235558D400E036BD /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		DBA73AA7235558D400E036BD /* DataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataViewController.xib; sourceTree = "<group>"; };
 		DBA73AAB2355A3F800E036BD /* BannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
@@ -148,7 +141,6 @@
 		DBBF85252350761C002597CF /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		DBBF852723507632002597CF /* FiveDayWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayWeather.swift; sourceTree = "<group>"; };
 		DBBF85292350767F002597CF /* ListWeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWeatherInfo.swift; sourceTree = "<group>"; };
-		DBBF852D235076C6002597CF /* AirPolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPolution.swift; sourceTree = "<group>"; };
 		DBBF852F235076DF002597CF /* Rain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
 		DBBF8531235076F6002597CF /* Sys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sys.swift; sourceTree = "<group>"; };
 		DBBF85332350770E002597CF /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -240,15 +232,6 @@
 				DB8D2B7723449F13009F32A2 /* FiveDayRouter.swift */,
 			);
 			path = FiveDayApi;
-			sourceTree = "<group>";
-		};
-		DB27F6B92344985300F2147B /* AirPolutionApi */ = {
-			isa = PBXGroup;
-			children = (
-				DB8D2B852344A582009F32A2 /* AirPolutionRouter.swift */,
-				DB8D2B872344A58C009F32A2 /* AirPolutionService.swift */,
-			);
-			path = AirPolutionApi;
 			sourceTree = "<group>";
 		};
 		DB31972F2341D73000FB0F68 = {
@@ -392,7 +375,6 @@
 				DBBF85252350761C002597CF /* Coordinate.swift */,
 				DBBF852723507632002597CF /* FiveDayWeather.swift */,
 				DBBF85292350767F002597CF /* ListWeatherInfo.swift */,
-				DBBF852D235076C6002597CF /* AirPolution.swift */,
 				DBBF852F235076DF002597CF /* Rain.swift */,
 				DBBF8531235076F6002597CF /* Sys.swift */,
 				DBBF85332350770E002597CF /* Weather.swift */,
@@ -522,7 +504,6 @@
 			children = (
 				DB8D2B7123449DFE009F32A2 /* CurrentWeatherResponse.swift */,
 				DB8D2B7923449F21009F32A2 /* FiveDayResponse.swift */,
-				DB8D2B892344A5A5009F32A2 /* AirPolutionResponse.swift */,
 				DB83DE9D23502475004D8F9C /* UVIndexResponse.swift */,
 				DBBDE1A9234C6E6A00E921BD /* PlaceResponse.swift */,
 			);
@@ -534,7 +515,6 @@
 			children = (
 				DBBF851623506A01002597CF /* GooglePlace */,
 				DB83DE90235023C2004D8F9C /* UVIndexApi */,
-				DB27F6B92344985300F2147B /* AirPolutionApi */,
 				DB27F6B72344984D00F2147B /* FiveDayApi */,
 				DBDE05842344946600B461C1 /* CurrentWeatherApi */,
 			);
@@ -754,13 +734,9 @@
 				DBDE05A22344946600B461C1 /* CoreObject.swift in Sources */,
 				DBA73ABC2355A57000E036BD /* DetailWeatherTableViewCell.swift in Sources */,
 				DBBF8520235075A6002597CF /* City.swift in Sources */,
-				DB8D2B882344A58C009F32A2 /* AirPolutionService.swift in Sources */,
 				DBBF853623507722002597CF /* Wind.swift in Sources */,
 				DB0DE1AC234B28FB00930179 /* AnimationController.swift in Sources */,
-				DBBF852E235076C6002597CF /* AirPolution.swift in Sources */,
-				DB8D2B862344A582009F32A2 /* AirPolutionRouter.swift in Sources */,
 				DBBF853A23507754002597CF /* UVIndex.swift in Sources */,
-				DB8D2B8A2344A5A5009F32A2 /* AirPolutionResponse.swift in Sources */,
 				DBDE05602344937C00B461C1 /* AppDelegate.swift in Sources */,
 				DBDE05A02344946600B461C1 /* AlamofireAppManager.swift in Sources */,
 				DBD38B1223580B6200E74A10 /* ServiceHelper.swift in Sources */,

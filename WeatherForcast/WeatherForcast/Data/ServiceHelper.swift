@@ -17,23 +17,19 @@ final class ServiceHelper {
     private let fiveDayService: FiveDayService
     private let placeService: PlaceService
     private let uvService: UVIndexService
-    private let airService: AirPolutionService
 
     private init(_ currentService: CurrentService, _ fiveDayService: FiveDayService,
-                 _ placeService: PlaceService, _ uvService: UVIndexService,
-                 _ airService: AirPolutionService) {
+                 _ placeService: PlaceService, _ uvService: UVIndexService) {
         self.currentService = currentService
         self.fiveDayService = fiveDayService
         self.placeService = placeService
         self.uvService = uvService
-        self.airService = airService
     }
 
     static func getInstance(_ currentService: CurrentService, _ fiveDayService: FiveDayService,
-                            _ placeService: PlaceService, _ uvService: UVIndexService,
-                            _ airService: AirPolutionService) -> ServiceHelper {
+                            _ placeService: PlaceService, _ uvService: UVIndexService) -> ServiceHelper {
         return ServiceHelper(currentService, fiveDayService, placeService,
-                             uvService, airService)
+                             uvService)
     }
 
     func getWeather(param: CurrentWeatherParams,
@@ -65,20 +61,6 @@ final class ServiceHelper {
                         onFailed: @escaping Failure) {
         fiveDayService.getFiveDayData(param: param).cloudResponse { (response: FiveDayResponse) in
             onSuccess(response.listData)
-        }.cloudError { (errMsg, errCode) in
-            onFailed(errMsg, errCode)
-        }
-    }
-
-    func getAirPolutionData(param: Coordinate,
-                            onSuccess: @escaping ((_ data: AirPolution) -> Void),
-                            onFailed: @escaping Failure) {
-        airService.getAirPolutionData(param: param).cloudResponse { (response: AirPolutionResponse) in
-            guard let data = response.dataList.first else {
-                onFailed(response.statusMessage, response.statusCode)
-                return
-            }
-            onSuccess(data)
         }.cloudError { (errMsg, errCode) in
             onFailed(errMsg, errCode)
         }
