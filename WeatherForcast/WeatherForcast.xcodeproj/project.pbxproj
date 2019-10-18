@@ -25,8 +25,6 @@
 		DB616654235416DB009D48D4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB616652235416DB009D48D4 /* DetailViewController.swift */; };
 		DB616655235416DB009D48D4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB616653235416DB009D48D4 /* DetailViewController.xib */; };
 		DB6D5D8C23458FCA009E4DC3 /* APIkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D5D8B23458FCA009E4DC3 /* APIkey.swift */; };
-		DB7F61C923570B8800E6DA07 /* TemperatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7F61C723570B8800E6DA07 /* TemperatureCollectionViewCell.swift */; };
-		DB7F61CA23570B8800E6DA07 /* TemperatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7F61C823570B8800E6DA07 /* TemperatureCollectionViewCell.xib */; };
 		DB83DE98235023F5004D8F9C /* UVIndexRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB83DE97235023F5004D8F9C /* UVIndexRouter.swift */; };
 		DB83DE9A23502439004D8F9C /* UVIndexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB83DE9923502439004D8F9C /* UVIndexService.swift */; };
 		DB83DE9C23502452004D8F9C /* UVIndexParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB83DE9B23502452004D8F9C /* UVIndexParams.swift */; };
@@ -73,6 +71,8 @@
 		DBBF853A23507754002597CF /* UVIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF853923507754002597CF /* UVIndex.swift */; };
 		DBBF853C23507792002597CF /* MainTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF853B23507792002597CF /* MainTemperature.swift */; };
 		DBD38B1223580B6200E74A10 /* ServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD38B1123580B6200E74A10 /* ServiceHelper.swift */; };
+		DBD38B1523585B0000E74A10 /* TemperatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD38B1323585B0000E74A10 /* TemperatureCollectionViewCell.swift */; };
+		DBD38B1623585B0000E74A10 /* TemperatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBD38B1423585B0000E74A10 /* TemperatureCollectionViewCell.xib */; };
 		DBDE055E2344937C00B461C1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05392344937C00B461C1 /* Constant.swift */; };
 		DBDE055F2344937C00B461C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBDE053B2344937C00B461C1 /* LaunchScreen.storyboard */; };
 		DBDE05602344937C00B461C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE053D2344937C00B461C1 /* AppDelegate.swift */; };
@@ -111,8 +111,6 @@
 		DB616652235416DB009D48D4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DB616653235416DB009D48D4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		DB6D5D8B23458FCA009E4DC3 /* APIkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIkey.swift; sourceTree = "<group>"; };
-		DB7F61C723570B8800E6DA07 /* TemperatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCollectionViewCell.swift; sourceTree = "<group>"; };
-		DB7F61C823570B8800E6DA07 /* TemperatureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemperatureCollectionViewCell.xib; sourceTree = "<group>"; };
 		DB83DE97235023F5004D8F9C /* UVIndexRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndexRouter.swift; sourceTree = "<group>"; };
 		DB83DE9923502439004D8F9C /* UVIndexService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndexService.swift; sourceTree = "<group>"; };
 		DB83DE9B23502452004D8F9C /* UVIndexParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndexParams.swift; sourceTree = "<group>"; };
@@ -159,6 +157,8 @@
 		DBBF853923507754002597CF /* UVIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndex.swift; sourceTree = "<group>"; };
 		DBBF853B23507792002597CF /* MainTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTemperature.swift; sourceTree = "<group>"; };
 		DBD38B1123580B6200E74A10 /* ServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHelper.swift; sourceTree = "<group>"; };
+		DBD38B1323585B0000E74A10 /* TemperatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCollectionViewCell.swift; sourceTree = "<group>"; };
+		DBD38B1423585B0000E74A10 /* TemperatureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemperatureCollectionViewCell.xib; sourceTree = "<group>"; };
 		DBDE05392344937C00B461C1 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DBDE053C2344937C00B461C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBDE053D2344937C00B461C1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -323,8 +323,8 @@
 		DB7F61C623570B7000E6DA07 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				DB7F61C723570B8800E6DA07 /* TemperatureCollectionViewCell.swift */,
-				DB7F61C823570B8800E6DA07 /* TemperatureCollectionViewCell.xib */,
+				DBD38B1323585B0000E74A10 /* TemperatureCollectionViewCell.swift */,
+				DBD38B1423585B0000E74A10 /* TemperatureCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -668,7 +668,7 @@
 				DB0DE1A0234AD3DE00930179 /* ListCityOfHomeTableViewCell.xib in Resources */,
 				DBBF8515235069CD002597CF /* Assets.xcassets in Resources */,
 				DBA73ABD2355A57000E036BD /* DetailWeatherTableViewCell.xib in Resources */,
-				DB7F61CA23570B8800E6DA07 /* TemperatureCollectionViewCell.xib in Resources */,
+				DBD38B1623585B0000E74A10 /* TemperatureCollectionViewCell.xib in Resources */,
 				DBA73AB52355A4A500E036BD /* TemperatureTableViewCell.xib in Resources */,
 				DB46576D2345E62100CB91C7 /* HomeViewController.xib in Resources */,
 			);
@@ -762,7 +762,6 @@
 				DBBF853A23507754002597CF /* UVIndex.swift in Sources */,
 				DB8D2B8A2344A5A5009F32A2 /* AirPolutionResponse.swift in Sources */,
 				DBDE05602344937C00B461C1 /* AppDelegate.swift in Sources */,
-				DB7F61C923570B8800E6DA07 /* TemperatureCollectionViewCell.swift in Sources */,
 				DBDE05A02344946600B461C1 /* AlamofireAppManager.swift in Sources */,
 				DBD38B1223580B6200E74A10 /* ServiceHelper.swift in Sources */,
 				DB6166502354159B009D48D4 /* String+Extension.swift in Sources */,
@@ -780,6 +779,7 @@
 				DBDE059F2344946600B461C1 /* ServiceRequest.swift in Sources */,
 				DBDE05A42344946600B461C1 /* Router.swift in Sources */,
 				DBBF851A23506A01002597CF /* PlaceParams.swift in Sources */,
+				DBD38B1523585B0000E74A10 /* TemperatureCollectionViewCell.swift in Sources */,
 				DB8D2B7623449F07009F32A2 /* FiveDayService.swift in Sources */,
 				DBBF853C23507792002597CF /* MainTemperature.swift in Sources */,
 				DB83DE98235023F5004D8F9C /* UVIndexRouter.swift in Sources */,

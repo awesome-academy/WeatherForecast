@@ -2,7 +2,7 @@
 //  TemperatureCollectionViewCell.swift
 //  WeatherForcast
 //
-//  Created by Tung Tran on 10/16/19.
+//  Created by Tung Tran on 10/17/19.
 //  Copyright © 2019 Sun. All rights reserved.
 //
 
@@ -10,10 +10,9 @@ import UIKit
 import Reusable
 
 final class TemperatureCollectionViewCell: UICollectionViewCell, NibReusable {
-
+    @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var temperatureLabel: UILabel!
     @IBOutlet private weak var weatherImage: UIImageView!
-    @IBOutlet private weak var timeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,3 +26,4 @@ final class TemperatureCollectionViewCell: UICollectionViewCell, NibReusable {
         timeLabel.text = dataReceived.dateTime.getStringHourFromUnix()
     }
 }
+

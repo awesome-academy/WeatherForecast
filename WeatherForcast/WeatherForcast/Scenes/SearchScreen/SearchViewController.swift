@@ -72,8 +72,6 @@ extension SearchViewController: UISearchBarDelegate {
         guard let text: String = searchBar.text?.removeStartEndWhiteSpaces() else {
             return
         }
-        var param = CurrentWeatherParams()
-        param.cityName = text
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
