@@ -9,8 +9,8 @@
 import Foundation
 
 extension Double {
-    func getStringTwoDecimal() -> String {
-        return String(format: "%.2f", self)
+    func getStringNoDecimal() -> String {
+        return String(format: "%.0f", self)
     }
 
     func getCelciusFromKelvin() -> String {
