@@ -83,6 +83,8 @@
 		DBDE05A42344946600B461C1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE058E2344946600B461C1 /* Router.swift */; };
 		DBDE05A52344946600B461C1 /* ServerResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE058F2344946600B461C1 /* ServerResponseObject.swift */; };
 		DBDE05A62344946600B461C1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDE05902344946600B461C1 /* Route.swift */; };
+		DBF179B42359692A000B57AB /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF179B22359692A000B57AB /* PlacesTableViewCell.swift */; };
+		DBF179B52359692A000B57AB /* PlacesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBF179B32359692A000B57AB /* PlacesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +168,8 @@
 		DBDE058E2344946600B461C1 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DBDE058F2344946600B461C1 /* ServerResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponseObject.swift; sourceTree = "<group>"; };
 		DBDE05902344946600B461C1 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		DBF179B22359692A000B57AB /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
+		DBF179B32359692A000B57AB /* PlacesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +303,8 @@
 		DB7F61C52357056A00E6DA07 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				DBF179B22359692A000B57AB /* PlacesTableViewCell.swift */,
+				DBF179B32359692A000B57AB /* PlacesTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -643,6 +649,7 @@
 				DBA73AAE2355A3F800E036BD /* BannerTableViewCell.xib in Resources */,
 				DBDE055F2344937C00B461C1 /* LaunchScreen.storyboard in Resources */,
 				DBA73AB92355A56000E036BD /* FiveDayTableViewCell.xib in Resources */,
+				DBF179B52359692A000B57AB /* PlacesTableViewCell.xib in Resources */,
 				DB616655235416DB009D48D4 /* DetailViewController.xib in Resources */,
 				DBBF851E23506BEF002597CF /* SearchViewController.xib in Resources */,
 				DB0DE1A0234AD3DE00930179 /* ListCityOfHomeTableViewCell.xib in Resources */,
@@ -737,6 +744,7 @@
 				DBBF853623507722002597CF /* Wind.swift in Sources */,
 				DB0DE1AC234B28FB00930179 /* AnimationController.swift in Sources */,
 				DBBF853A23507754002597CF /* UVIndex.swift in Sources */,
+				DBF179B42359692A000B57AB /* PlacesTableViewCell.swift in Sources */,
 				DBDE05602344937C00B461C1 /* AppDelegate.swift in Sources */,
 				DBDE05A02344946600B461C1 /* AlamofireAppManager.swift in Sources */,
 				DBD38B1223580B6200E74A10 /* ServiceHelper.swift in Sources */,

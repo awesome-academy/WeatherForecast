@@ -14,8 +14,8 @@ final class DetailViewController: BaseViewController {
     @IBOutlet private weak var contentView: UIView!
 
     var currentViewControllerIndex = 0
-    private var pageController: UIPageViewController?
     private var dataSource = [CurrentWeather]()
+    private var pageController: UIPageViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,7 @@ extension DetailViewController: UIPageViewControllerDataSource {
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
+
         guard let dataView = viewController as? DataViewController else {
             return nil
         }
@@ -71,7 +71,7 @@ extension DetailViewController: UIPageViewControllerDataSource {
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
+
         guard let dataView = viewController as? DataViewController else {
             return nil
         }

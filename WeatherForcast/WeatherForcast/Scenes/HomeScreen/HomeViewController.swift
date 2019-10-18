@@ -18,6 +18,7 @@ final class HomeViewController: BaseViewController {
     private let service = FiveDayService()
     private var fiveDayList = [FiveDayWeather]()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -57,25 +58,24 @@ final class HomeViewController: BaseViewController {
 
 
 extension HomeViewController: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedIndex = indexPath.row
-        self.moveToDetail(with: selectedIndex)
+        moveToDetail(with: indexPath.row)
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weatherList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = homeTableView.dequeueReusableCell(for: indexPath, cellType: ListCityOfHomeTableViewCell.self).then {
             $0.fillData(data: weatherList[indexPath.row])
         }
@@ -93,9 +93,9 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 extension HomeViewController: PassDataBetweenViewController {
-    
+
     func passDataBetweenViewController(data: CurrentWeather) {
-        
+
         guard !weatherList.isEmpty else {
             weatherList.append(data)
             homeTableView.reloadData()
