@@ -8,20 +8,60 @@
 
 import UIKit
 import Reusable
+import Reachability
 
 final class HomeViewController: BaseViewController {
 
+    @IBOutlet private weak var alertLabel: UILabel!
+    @IBOutlet private weak var alertView: UIView!
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var homeTableView: UITableView!
 
     var weatherList = [CurrentWeather]()
     private let service = FiveDayService()
     private var fiveDayList = [FiveDayWeather]()
+    private let reachability = Reachability()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         configureTable()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged(note:)), name: .reachabilityChanged, object: reachability)
+        do {
+            try reachability?.startNotifier()
+        } catch {
+            print("\(Message.errorNotify)")
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        reachability?.stopNotifier()
+    }
+
+    @objc func internetChanged(note: Notification) {
+        let reachability = note.object as? Reachability
+        switch reachability?.connection {
+        case .wifi?:
+            DispatchQueue.main.async {
+                self.alertLabel.text = ""
+                self.alertView.backgroundColor = .white
+            }
+        case .cellular?:
+            DispatchQueue.main.async {
+                self.alertLabel.text = ""
+                self.alertView.backgroundColor = .white
+            }
+        case .none:
+            alertView.backgroundColor = .black
+            alertLabel.text = Message.errorNetwork
+        default:
+            alertView.backgroundColor = .white
+        }
     }
 
     private func configureTable() {

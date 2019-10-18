@@ -42,7 +42,7 @@ final class SearchViewController: BaseViewController {
     private func configureUI() {
         searchBar.delegate = self
         searchBar.becomeFirstResponder()
-        titleLabel.text = "Nhập tên thành phố bạn cần tìm kiếm"
+        titleLabel.text = Result.titleSearchSceen
     }
 
     private func startIndicator() {
@@ -120,10 +120,8 @@ extension SearchViewController: UISearchBarDelegate {
             self?.searchTableView.reloadData()
         }, onFailed: { [weak self] _, _ in
             self?.stopIndicator()
+            self?.alertShow(title: Message.errorTitle, message: Message.errorMessage, view: self ?? UIViewController())
         })
-    }
-
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     }
 }
 

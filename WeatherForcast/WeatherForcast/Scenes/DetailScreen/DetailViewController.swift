@@ -8,18 +8,38 @@
 
 import UIKit
 import Then
+import Reachability
 
 final class DetailViewController: BaseViewController {
 
+    @IBOutlet private weak var alertLabel: UILabel!
     @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var alertView: UIView!
+    @IBOutlet private weak var homeButton: UIButton!
 
     var currentViewControllerIndex = 0
     private var dataSource = [CurrentWeather]()
     private var pageController: UIPageViewController?
+    private let reachability = Reachability()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePageViewController()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+        do {
+            try reachability?.startNotifier()
+        } catch {
+            print("\(Message.errorNotify)")
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        reachability?.stopNotifier()
     }
 
     private func configurePageViewController() {
@@ -39,11 +59,36 @@ final class DetailViewController: BaseViewController {
         view.addSubview(pageControl.view)
     }
 
+    @objc func reachabilityChanged(note: Notification) {
+        let reachability = note.object as? Reachability
+        switch reachability?.connection {
+        case .wifi?:
+            DispatchQueue.main.async {
+                self.alertLabel.text = ""
+                self.alertView.backgroundColor = .white
+            }
+        case .cellular?:
+            DispatchQueue.main.async {
+                self.alertLabel.text = ""
+                self.alertView.backgroundColor = .white
+            }
+        case .none:
+            alertView.backgroundColor = .black
+            alertLabel.text = Message.errorNetwork
+        default:
+            alertView.backgroundColor = .white
+        }
+    }
+
     func fillData(_ data: [CurrentWeather]?) {
         guard let dataReceived = data else {
             return
         }
         dataSource = dataReceived
+    }
+
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }
 

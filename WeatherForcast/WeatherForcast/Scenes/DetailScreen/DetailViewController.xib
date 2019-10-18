@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="WeatherForcast" customModuleProvider="target">
             <connections>
+                <outlet property="alertLabel" destination="lss-oN-gwV" id="kGd-Pb-w1T"/>
+                <outlet property="alertView" destination="UhO-X1-d6j" id="aBf-dQ-eKR"/>
                 <outlet property="contentView" destination="ahW-8A-dEz" id="o2r-SG-e55"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,13 +37,25 @@
                                 <constraint firstAttribute="height" constant="24" id="DdS-CY-LgC"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="backButton:" destination="-1" eventType="touchUpInside" id="QeA-ap-gTU"/>
+                            </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lss-oN-gwV">
+                            <rect key="frame" x="24" y="9" width="305" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="3HV-gx-ssB" secondAttribute="trailing" constant="10" id="Hbe-JU-L5j"/>
                         <constraint firstAttribute="height" constant="30" id="Sww-AO-IjX"/>
+                        <constraint firstItem="3HV-gx-ssB" firstAttribute="leading" secondItem="lss-oN-gwV" secondAttribute="trailing" constant="12" id="ZHU-5e-Qgf"/>
+                        <constraint firstItem="lss-oN-gwV" firstAttribute="centerY" secondItem="UhO-X1-d6j" secondAttribute="centerY" id="ejj-kH-gYj"/>
                         <constraint firstItem="3HV-gx-ssB" firstAttribute="centerY" secondItem="UhO-X1-d6j" secondAttribute="centerY" id="iSw-tF-FIu"/>
+                        <constraint firstItem="lss-oN-gwV" firstAttribute="leading" secondItem="UhO-X1-d6j" secondAttribute="leading" constant="24" id="imi-6s-Hen"/>
                     </constraints>
                 </view>
             </subviews>

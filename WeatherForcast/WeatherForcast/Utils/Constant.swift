@@ -9,8 +9,10 @@
 import Foundation
 
 struct Message {
+    static let errorNotify = "Notify error" 
     static let errorMessage = "Đã xảy ra lỗi, xin vui lòng thử lại"
     static let errorTitle = "Thông báo"
+    static let errorNetwork = "Không có kết nối"
 }
 
 struct TableRow {
@@ -23,4 +25,5 @@ struct Result {
     static let hourFilter = "06"
     static let overLimit = "OVER_QUERY_LIMIT"
     static let arrayKey = "arrayData"
+    static let titleSearchSceen = "Nhập tên thành phố bạn cần tìm kiếm"
 }
