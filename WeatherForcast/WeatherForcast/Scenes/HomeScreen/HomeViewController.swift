@@ -9,6 +9,7 @@
 import UIKit
 import Reusable
 import Reachability
+import RealmSwift
 
 final class HomeViewController: BaseViewController {
 
@@ -20,19 +21,28 @@ final class HomeViewController: BaseViewController {
     var weatherList = [CurrentWeather]()
     private let service = FiveDayService()
     private var fiveDayList = [FiveDayWeather]()
-    private let reachability = Reachability()
+    private let homeReachability = Reachability()
+    private let realm = try? Realm()
+    private var isConnected = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
         configureTable()
+
+        guard let weatherFromLocal = realm?.objects(RealmWeather.self) else {
+            return
+        }
+        getDataFromLocal(weatherFromLocal) {
+            homeTableView.reloadData()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged(note:)), name: .reachabilityChanged, object: reachability)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged(note:)), name: .reachabilityChanged, object: homeReachability)
         do {
-            try reachability?.startNotifier()
+            try homeReachability?.startNotifier()
         } catch {
             print("\(Message.errorNotify)")
         }
@@ -40,43 +50,61 @@ final class HomeViewController: BaseViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        reachability?.stopNotifier()
-    }
-
-    @objc func internetChanged(note: Notification) {
-        let reachability = note.object as? Reachability
-        switch reachability?.connection {
-        case .wifi?:
-            DispatchQueue.main.async {
-                self.alertLabel.text = ""
-                self.alertView.backgroundColor = .white
-            }
-        case .cellular?:
-            DispatchQueue.main.async {
-                self.alertLabel.text = ""
-                self.alertView.backgroundColor = .white
-            }
-        case .none:
-            alertView.backgroundColor = .black
-            alertLabel.text = Message.errorNetwork
-        default:
-            alertView.backgroundColor = .white
-        }
+        homeReachability?.stopNotifier()
     }
 
     private func configureTable() {
-        homeTableView.delegate = self
-        homeTableView.dataSource = self
-        homeTableView.register(cellType: ListCityOfHomeTableViewCell.self)
+        homeTableView.do {
+            $0.delegate = self
+            $0.dataSource = self
+            $0.register(cellType: ListCityOfHomeTableViewCell.self)
+        }
     }
 
-    private func configureUI() {
+    private func getDataFromLocal(_ weather: Results<RealmWeather>, onSuccess: (() -> Void)) {
+        defer {
+            onSuccess()
+        }
+
+        for data in weather {
+            let weatherToFill = CurrentWeather(data: nil).then {
+                $0.id = data.id
+                $0.name = data.name
+                $0.dateTimeCurrent = data.dateTimeCurrent
+            }
+
+            let coordData = Coordinate(data: nil).with {
+                $0.lat = data.lat
+                $0.lon = data.lon
+            }
+            weatherToFill.coordData = coordData
+
+            let mainData = MainTemperature(data: nil).with {
+                $0.temp = data.temperature
+            }
+            weatherToFill.mainData = mainData
+
+            weatherList.append(weatherToFill)
+        }
+    }
+
+    @objc func internetChanged(note: Notification) {
+        guard let reachability = note.object as? Reachability else {
+            return
+        }
+        alertView.backgroundColor = reachability.isReachable ? .white : .red
+        alertLabel.text = reachability.isReachable ? "" : Message.errorNetwork
+        isConnected = reachability.isReachable
     }
 
     @IBAction func searchAction(_ sender: Any) {
-        let searchVc = SearchViewController()
-        searchVc.delegate = self
-        navigationController?.pushViewController(searchVc, animated: true)
+        if isConnected {
+            let searchVc = SearchViewController()
+            searchVc.delegate = self
+            navigationController?.pushViewController(searchVc, animated: true)
+        } else {
+            alertShow(title: Message.errorTitle, message: Message.errorNetwork, view: self)
+        }
     }
 
     private func getFiveDayData(param: FiveDayParams) {
@@ -88,10 +116,82 @@ final class HomeViewController: BaseViewController {
     }
 
     private func moveToDetail(with index: Int) {
-        let detailVc = DetailViewController()
-        detailVc.currentViewControllerIndex = index
-        detailVc.fillData(weatherList)
-        navigationController?.pushViewController(detailVc, animated: true)
+        if isConnected {
+            let detailVc = DetailViewController()
+            detailVc.currentViewControllerIndex = index
+            detailVc.fillData(weatherList)
+            navigationController?.pushViewController(detailVc, animated: true)
+        } else {
+            alertShow(title: Message.errorTitle, message: Message.errorNetwork, view: self)
+        }
+    }
+
+    private func saveLocalReaml(with data: CurrentWeather?, onSuccess: @escaping (() -> Void),
+                                onFailed: @escaping ((_ error: Error) -> Void)) {
+
+        guard let dataReceived = data else {
+            return
+        }
+        let realmWeather = RealmWeather().then {
+            $0.id = dataReceived.id
+            $0.temperature = dataReceived.mainData?.temp ?? 0.0
+            $0.name = dataReceived.name
+            $0.dateTimeCurrent = dataReceived.dateTimeCurrent
+            $0.lat = dataReceived.coordData?.lat ?? 0.0
+            $0.lon = dataReceived.coordData?.lon ?? 0.0
+        }
+        do {
+            try realm?.write {
+                realm?.add(realmWeather)
+            }
+            onSuccess()
+        } catch let error {
+            onFailed(error)
+        }
+    }
+
+    private func updateLocalRealm(with data: CurrentWeather?, onSuccess: @escaping (() -> Void),
+                                  onFailed: @escaping ((_ error: Error) -> Void)) {
+
+        guard let dataReceived = data else {
+            return
+        }
+        let realmWeather = RealmWeather().then {
+            $0.id = dataReceived.id
+            $0.temperature = dataReceived.mainData?.temp ?? 0.0
+            $0.name = dataReceived.name
+            $0.dateTimeCurrent = dataReceived.dateTimeCurrent
+            $0.lat = dataReceived.coordData?.lat ?? 0.0
+            $0.lon = dataReceived.coordData?.lon ?? 0.0
+        }
+        do {
+            try realm?.write {
+                realm?.add(realmWeather, update: true)
+            }
+            onSuccess()
+        } catch let error {
+            onFailed(error)
+        }
+    }
+
+    private func deleteObjectRealm(with data: CurrentWeather?, onSuccess: @escaping (() -> Void),
+                                   onFailed: @escaping ((_ error: Error) -> Void)) {
+        guard let dataReceived = data else {
+            return
+        }
+
+        let id = dataReceived.id
+        guard let deleteTarget = realm?.objects(RealmWeather.self).filter("id = %@", id) else {
+            return
+        }
+        do {
+            try realm?.write {
+                realm?.delete(deleteTarget)
+            }
+            onSuccess()
+        } catch let error {
+            onFailed(error)
+        }
     }
 }
 
@@ -123,8 +223,13 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
         let delete = UIContextualAction(style: .destructive, title: "Xoá") { [weak self] (action, view, nil) in
-            self?.weatherList.remove(at: indexPath.row)
-            self?.homeTableView.reloadData()
+
+            self?.deleteObjectRealm(with: self?.weatherList[indexPath.row], onSuccess: {
+                self?.weatherList.remove(at: indexPath.row)
+                self?.homeTableView.reloadData()
+            }, onFailed: { [weak self] error in
+                self?.alertShow(title: Message.errorTitle, message: "\(error.localizedDescription)", view: self ?? UIViewController())
+            })
         }
         return UISwipeActionsConfiguration(actions: [delete])
     }
@@ -135,15 +240,31 @@ extension HomeViewController: PassDataBetweenViewController {
     func passDataBetweenViewController(data: CurrentWeather) {
 
         guard !weatherList.isEmpty else {
-            weatherList.append(data)
+            saveLocalReaml(with: data, onSuccess: {
+                self.weatherList.append(data)
+            }, onFailed: { [weak self] error in
+                self?.alertShow(title: Message.errorTitle, message: "\(error.localizedDescription)", view: self ?? UIViewController())
+            })
+
             homeTableView.reloadData()
             return
         }
+
         if let index = weatherList.enumerated().first(where: { $0.element.id == data.id })?.offset {
-            weatherList[index] = data
+            updateLocalRealm(with: data, onSuccess: {
+                self.weatherList[index] = data
+            }, onFailed: { [weak self] error in
+                self?.alertShow(title: Message.errorTitle, message: "\(error.localizedDescription)", view: self ?? UIViewController())
+            })
+
         } else {
-            weatherList.append(data)
+            saveLocalReaml(with: data, onSuccess: {
+                self.weatherList.append(data)
+            }, onFailed: { [weak self] error in
+                self?.alertShow(title: Message.errorTitle, message: "\(error.localizedDescription)", view: self ?? UIViewController())
+            })
         }
+
         homeTableView.reloadData()
     }
 }

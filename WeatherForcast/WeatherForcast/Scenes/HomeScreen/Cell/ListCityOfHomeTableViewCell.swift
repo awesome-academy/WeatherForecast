@@ -25,6 +25,6 @@ final class ListCityOfHomeTableViewCell: UITableViewCell, NibReusable {
         guard let dataReceived = data else { return }
         tempLabel.text = dataReceived.mainData?.temp.getStringNoDecimal()
         cityLabel.text = dataReceived.name
-        timeLabel.text = dataReceived.dateTimeCurrent?.getStringDateFromUnix()
+        timeLabel.text = dataReceived.dateTimeCurrent.getStringDateFromUnix()
     }
 }

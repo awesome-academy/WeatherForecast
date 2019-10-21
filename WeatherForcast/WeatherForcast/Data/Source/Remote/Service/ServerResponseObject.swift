@@ -14,7 +14,7 @@ class ServerResponseObject: CoreObject {
     var status: String?
 
     required init(data: [AnyHashable: Any]?) {
-        statusCode = data?["code"] as? Int
+        statusCode = data?["cod"] as? Int
         statusMessage = data?["message"] as? String
         status = data?["status"] as? String
     }

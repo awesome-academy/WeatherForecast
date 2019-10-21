@@ -9,10 +9,12 @@
 import Foundation
 
 struct Message {
-    static let errorNotify = "Notify error" 
+    static let errorNotify = "Notify error"
     static let errorMessage = "Đã xảy ra lỗi, xin vui lòng thử lại"
     static let errorTitle = "Thông báo"
     static let errorNetwork = "Không có kết nối"
+    static let cityNotFound = "city not found"
+    static let errorCity = "Không tìm thấy dữ liệu về thành phố"
 }
 
 struct TableRow {

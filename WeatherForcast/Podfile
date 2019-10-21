@@ -11,4 +11,5 @@ target 'WeatherForcast' do
   pod 'Then'
   pod 'Reusable'
   pod 'ReachabilitySwift'
+  pod 'RealmSwift'
 end

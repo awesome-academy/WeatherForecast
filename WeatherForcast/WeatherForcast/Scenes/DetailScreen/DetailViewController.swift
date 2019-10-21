@@ -60,24 +60,11 @@ final class DetailViewController: BaseViewController {
     }
 
     @objc func reachabilityChanged(note: Notification) {
-        let reachability = note.object as? Reachability
-        switch reachability?.connection {
-        case .wifi?:
-            DispatchQueue.main.async {
-                self.alertLabel.text = ""
-                self.alertView.backgroundColor = .white
-            }
-        case .cellular?:
-            DispatchQueue.main.async {
-                self.alertLabel.text = ""
-                self.alertView.backgroundColor = .white
-            }
-        case .none:
-            alertView.backgroundColor = .black
-            alertLabel.text = Message.errorNetwork
-        default:
-            alertView.backgroundColor = .white
+        guard let reachability = note.object as? Reachability else {
+            return
         }
+        alertView.backgroundColor = reachability.isReachable ? .white : .red
+        alertLabel.text = reachability.isReachable ? "" : Message.errorNetwork
     }
 
     func fillData(_ data: [CurrentWeather]?) {
