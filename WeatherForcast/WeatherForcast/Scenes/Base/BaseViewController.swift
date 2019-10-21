@@ -47,5 +47,4 @@ class BaseViewController: UIViewController {
         alertController.addAction(okButton)
         view.present(alertController, animated: true, completion: nil)
     }
-
 }

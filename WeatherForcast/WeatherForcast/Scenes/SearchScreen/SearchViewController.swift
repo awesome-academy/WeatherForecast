@@ -16,6 +16,7 @@ final class SearchViewController: BaseViewController {
     var delegate: PassDataBetweenViewController?
     var placeList = [Place]()
     var currentWeather: CurrentWeather?
+    private var indicator = UIActivityIndicatorView()
 
     private let serviceHelper: ServiceHelper? = {
         return ServiceHelper.getInstance(CurrentService(),
@@ -31,14 +32,33 @@ final class SearchViewController: BaseViewController {
     }
 
     private func configureTableView() {
-        searchTableView.delegate = self
-        searchTableView.dataSource = self
+        searchTableView.then {
+            $0.delegate = self
+            $0.dataSource = self
+            $0.register(cellType: PlacesTableViewCell.self)
+        }
     }
 
     private func configureUI() {
         searchBar.delegate = self
         searchBar.becomeFirstResponder()
         titleLabel.text = "Nhập tên thành phố bạn cần tìm kiếm"
+    }
+
+    private func startIndicator() {
+        indicator.then {
+            $0.center = self.view.center
+            $0.hidesWhenStopped = true
+            $0.style = .gray
+        }
+        view.addSubview(indicator)
+        indicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+
+    private func stopIndicator() {
+        indicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
 
     @IBAction func backButtonAction(_ sender: Any) {
@@ -51,16 +71,30 @@ extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var param = CurrentWeatherParams()
+        param.cityName = placeList[indexPath.row].mainText
+
+        serviceHelper?.getWeather(param: param, onSuccess: { [weak self] weather in
+            self?.currentWeather = weather
+            self?.delegate?.passDataBetweenViewController(data: weather)
+        }, onFailed: { (errMsg, errCode) in
+        })
+    }
 }
 
 extension SearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return placeList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = searchTableView.dequeueReusableCell(for: indexPath, cellType: PlacesTableViewCell.self).then {
+            $0.fillData(placeList[indexPath.row])
+        }
+        return cell
     }
 }
 
@@ -70,14 +104,15 @@ extension SearchViewController: UISearchBarDelegate {
         guard let text: String = searchBar.text?.removeStartEndWhiteSpaces() else {
             return
         }
-        var param = CurrentWeatherParams()
-        param.cityName = text
-
-        serviceHelper?.getWeather(param: param, onSuccess: { [weak self](response) in
-            self?.delegate?.passDataBetweenViewController(data: response)
-            self?.navigationController?.popViewController(animated: true)
-        }, onFailed: { (errMsg, errCode) in
-            print("\(errMsg ?? "")")
+        var param = PlaceParams()
+        param.searchString = text
+        startIndicator()
+        serviceHelper?.getPlace(param: param, onSuccess: { [weak self](places) in
+            self?.placeList = places
+            self?.searchTableView.reloadData()
+            self?.stopIndicator()
+        }, onFailed: { _, _ in
+            self.stopIndicator()
         })
     }
 

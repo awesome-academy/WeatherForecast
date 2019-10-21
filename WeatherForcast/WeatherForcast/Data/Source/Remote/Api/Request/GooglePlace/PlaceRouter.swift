@@ -12,7 +12,7 @@ import Alamofire
 final class PlaceRouter: Router {
 
     func getPlace(param: PlaceParams) -> URLRequestConvertible {
-        let path = buildValidFullPathForRequest(.googleOutput)
+        let path = builGoogleValidFullPathForRequest(.googleOutput)
         return buildUrlRequest(Route(method: .get, path: path, queryParams: param.toJsonParam()))
     }
 }

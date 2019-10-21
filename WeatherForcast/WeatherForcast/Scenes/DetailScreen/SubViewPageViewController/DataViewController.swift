@@ -14,6 +14,17 @@ final class DataViewController: UIViewController {
 
     var index: Int
     private var currentWeather: CurrentWeather?
+    private var indicator = UIActivityIndicatorView()
+    private var fiveDayWeather = [FiveDayWeather]()
+    private var uvIndex: UVIndex?
+    private let dispatch = DispatchGroup()
+
+    private let serviceHelper: ServiceHelper? = {
+        return ServiceHelper.getInstance(CurrentService(),
+                                         FiveDayService(),
+                                         PlaceService(),
+                                         UVIndexService())
+    }()
 
     init(with index: Int) {
         self.index = index
@@ -42,6 +53,22 @@ final class DataViewController: UIViewController {
         }
     }
 
+    private func startIndicator() {
+        indicator.then {
+            $0.center = self.view.center
+            $0.hidesWhenStopped = true
+            $0.style = .gray
+        }
+        view.addSubview(indicator)
+        indicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+
+    private func stopIndicator() {
+        indicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
+
     func fillData(data: CurrentWeather?) {
         guard let dataReceived = data else {
             return
@@ -51,6 +78,22 @@ final class DataViewController: UIViewController {
 
     private func configureView() {
         view.backgroundColor = .clear
+    }
+
+    private func getWeatherData() {
+        dispatch.enter()
+        getFiveDayData()
+    }
+
+    private func getFiveDayData() {
+        var param = FiveDayParams()
+        param.cityName = currentWeather?.name
+
+        serviceHelper?.getFiveDayData(param: param, onSuccess: { [weak self] dataList in
+            self?.fiveDayWeather = dataList
+            self?.dispatch.leave()
+        }, onFailed: { (errMsg, errCode) in
+        })
     }
 }
 
@@ -91,8 +134,7 @@ extension DataViewController: UITableViewDataSource {
             }
             return cell
         case 1:
-            let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: TemperatureTableViewCell.self).then {
-                $0.fillData(currentWeather)
+            let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: TemperatureTableViewCell.self).then { _ in
             }
             return cell
         default:

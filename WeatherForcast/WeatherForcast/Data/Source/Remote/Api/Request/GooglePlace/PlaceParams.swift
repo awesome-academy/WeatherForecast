@@ -12,14 +12,12 @@ struct PlaceParams: RequestParameterObject {
     var searchString: String? = ""
     var key: String = kPlaceKey
     var language = "vi"
-    var type = "cities"
 
     func toJsonParam() -> [String: Any] {
         var params = [String: Any]()
         params["input"] = searchString ?? ""
         params["key"] = key
         params["language"] = language
-        params["types"] = type
         return params
     }
 }
