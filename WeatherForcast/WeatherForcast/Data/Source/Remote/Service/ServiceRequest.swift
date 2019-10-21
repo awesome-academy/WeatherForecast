@@ -83,7 +83,6 @@ final class ServiceRequest<T: CoreObject> {
 
     func handleError(error: Error?) {
         guard let error = error else {
-            // Revisit to change error message
             cloudErrorClosure?("errorFromServer", 500)
             return
         }

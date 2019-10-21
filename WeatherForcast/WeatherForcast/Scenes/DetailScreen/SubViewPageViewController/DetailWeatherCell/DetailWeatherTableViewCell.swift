@@ -57,7 +57,7 @@ final class DetailWeatherTableViewCell: UITableViewCell, NibReusable {
         sunRiseTime.text = dataReceived.sysData?.sunRise.getStringHoursMinutesFromUnix()
         sunSetTime.text = dataReceived.sysData?.sunSet.getStringHoursMinutesFromUnix()
         humidityIndex.text = "\(dataReceived.mainData?.humidity ?? 0) %"
-
+        
         if let windSpd = dataReceived.windData?.speed.getStringOneDecimal() {
             windSpeed.text = windSpd + "m/s"
         }

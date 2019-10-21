@@ -22,7 +22,7 @@ final class TemperatureTableViewCell: UITableViewCell, NibReusable {
         super.awakeFromNib()
         configureCollection()
     }
-
+    
     private func configureCollection() {
         temperatureCollection.then {
             $0.delegate = self
@@ -31,7 +31,7 @@ final class TemperatureTableViewCell: UITableViewCell, NibReusable {
             $0.register(cellType: TemperatureCollectionViewCell.self)
         }
     }
-
+    
     func fillTodayInfo(_ data: CurrentWeather?) {
         guard let received = data else {
             return
@@ -41,7 +41,7 @@ final class TemperatureTableViewCell: UITableViewCell, NibReusable {
         temperatureMaxLabel.text = received.mainData?.tempMax.getStringNoDecimal()
         temperatureMinLabel.text = received.mainData?.tempMin.getStringNoDecimal()
     }
-
+    
     func fillData(_ data: [FiveDayWeather]?) {
         guard let dataReceived = data else {
             return
@@ -66,7 +66,7 @@ extension TemperatureTableViewCell: UICollectionViewDataSource {
     }
 }
 extension TemperatureTableViewCell: UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

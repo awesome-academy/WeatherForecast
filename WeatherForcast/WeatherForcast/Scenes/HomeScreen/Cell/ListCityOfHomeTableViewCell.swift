@@ -19,13 +19,6 @@ final class ListCityOfHomeTableViewCell: UITableViewCell, NibReusable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureUi()
-    }
-
-    private func configureUi() {
-        timeLabel.font = UIFont.systemFont(ofSize: 17)
-        cityLabel.font = UIFont.systemFont(ofSize: 25)
-        tempLabel.font = UIFont.systemFont(ofSize: 55)
     }
 
     func fillData(data: CurrentWeather?) {
