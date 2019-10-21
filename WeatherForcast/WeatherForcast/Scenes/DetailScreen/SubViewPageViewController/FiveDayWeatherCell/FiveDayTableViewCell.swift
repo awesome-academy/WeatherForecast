@@ -24,6 +24,7 @@ final class FiveDayTableViewCell: UITableViewCell, NibReusable {
         guard let dataReceived = data else {
             return
         }
+        weatherImage.image = dataReceived.weatherData.first?.main.toWeatherIcon()
         dayLabel.text = dataReceived.dateTime.getStringDayOfWeekFromUnix().toVietNameseString()
         minTemperatureLabel.text = dataReceived.mainData?.tempMin.getStringNoDecimal()
         maxTemperatureLabel.text = dataReceived.mainData?.tempMax.getStringNoDecimal()

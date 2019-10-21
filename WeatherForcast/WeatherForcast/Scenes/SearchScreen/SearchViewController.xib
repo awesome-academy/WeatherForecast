@@ -30,18 +30,18 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu8-cF-xwT">
-                                    <rect key="frame" x="12" y="8" width="24" height="24"/>
-                                    <color key="backgroundColor" red="1" green="0.075493018159999994" blue="0.045836979149999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <rect key="frame" x="8" y="8" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="VOY-tR-OeC"/>
                                         <constraint firstAttribute="width" constant="24" id="fHh-UZ-MCJ"/>
                                     </constraints>
+                                    <state key="normal" image="back_arrow_black"/>
                                     <connections>
                                         <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="uaE-wS-NXc"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhập tên thành phố bạn cần tìm kiếm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkD-e3-p6q">
-                                    <rect key="frame" x="48" y="10" width="315" height="20.5"/>
+                                    <rect key="frame" x="44" y="10" width="319" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                 <constraint firstAttribute="height" constant="40" id="X7m-e2-Apb"/>
                                 <constraint firstItem="iu8-cF-xwT" firstAttribute="centerY" secondItem="F3p-JP-DN7" secondAttribute="centerY" id="js7-Bj-lYl"/>
                                 <constraint firstAttribute="trailing" secondItem="VkD-e3-p6q" secondAttribute="trailing" constant="12" id="tic-SH-sOP"/>
-                                <constraint firstItem="iu8-cF-xwT" firstAttribute="leading" secondItem="F3p-JP-DN7" secondAttribute="leading" constant="12" id="uai-El-Gq2"/>
+                                <constraint firstItem="iu8-cF-xwT" firstAttribute="leading" secondItem="F3p-JP-DN7" secondAttribute="leading" constant="8" id="uai-El-Gq2"/>
                             </constraints>
                         </view>
                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Y3O-90-ZEn">
@@ -92,4 +92,7 @@
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
+    <resources>
+        <image name="back_arrow_black" width="33" height="33"/>
+    </resources>
 </document>
