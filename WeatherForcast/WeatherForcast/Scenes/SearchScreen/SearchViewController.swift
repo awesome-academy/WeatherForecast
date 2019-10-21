@@ -79,7 +79,8 @@ extension SearchViewController: UITableViewDelegate {
         serviceHelper?.getWeather(param: param, onSuccess: { [weak self] weather in
             self?.currentWeather = weather
             self?.delegate?.passDataBetweenViewController(data: weather)
-        }, onFailed: { (errMsg, errCode) in
+            self?.navigationController?.popViewController(animated: true)
+        }, onFailed: { [weak self] _, _ in
         })
     }
 }
@@ -107,12 +108,18 @@ extension SearchViewController: UISearchBarDelegate {
         var param = PlaceParams()
         param.searchString = text
         startIndicator()
-        serviceHelper?.getPlace(param: param, onSuccess: { [weak self](places) in
-            self?.placeList = places
-            self?.searchTableView.reloadData()
+
+        serviceHelper?.getPlace(param: param, onSuccess: { [weak self] response in
+            guard response.status != Result.overLimit else {
+                self?.stopIndicator()
+                self?.alertShow(title: Message.errorTitle, message: Message.errorMessage, view: self ?? UIViewController())
+                return
+            }
+            self?.placeList = response.places
             self?.stopIndicator()
-        }, onFailed: { _, _ in
-            self.stopIndicator()
+            self?.searchTableView.reloadData()
+        }, onFailed: { [weak self] _, _ in
+            self?.stopIndicator()
         })
     }
 

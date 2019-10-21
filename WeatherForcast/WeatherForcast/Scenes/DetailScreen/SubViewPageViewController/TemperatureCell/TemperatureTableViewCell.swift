@@ -32,11 +32,22 @@ final class TemperatureTableViewCell: UITableViewCell, NibReusable {
         }
     }
 
+    func fillTodayInfo(_ data: CurrentWeather?) {
+        guard let received = data else {
+            return
+        }
+        let text = received.dateTimeCurrent?.getStringDayOfWeekFromUnix()
+        dayLabel.text = "Hôm nay \(text?.toVietNameseString() ?? "")"
+        temperatureMaxLabel.text = received.mainData?.tempMax.getStringNoDecimal()
+        temperatureMinLabel.text = received.mainData?.tempMin.getStringNoDecimal()
+    }
+
     func fillData(_ data: [FiveDayWeather]?) {
         guard let dataReceived = data else {
             return
         }
         weather = dataReceived
+        temperatureCollection.reloadData()
     }
 }
 
@@ -54,8 +65,25 @@ extension TemperatureTableViewCell: UICollectionViewDataSource {
         return cell
     }
 }
-extension TemperatureTableViewCell: UICollectionViewDelegate {
+extension TemperatureTableViewCell: UICollectionViewDelegateFlowLayout {
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = temperatureCollection.bounds.height
+        let width = temperatureCollection.bounds.width / 4.5
+        return CGSize(width: width, height: height)
+    }
 }
 
 

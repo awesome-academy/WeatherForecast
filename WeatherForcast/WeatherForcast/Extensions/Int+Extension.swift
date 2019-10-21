@@ -28,6 +28,7 @@ extension Int {
             $0.dateStyle = .short
             $0.timeStyle = .short
             $0.dateFormat = "HH"
+            $0.timeZone = TimeZone(identifier: "UTC")
         }
         let stringDate = dateFormat.string(from: date)
         return stringDate
@@ -52,6 +53,17 @@ extension Int {
             $0.dateStyle = .short
             $0.timeStyle = .short
             $0.dateFormat = "HH:mm"
+        }
+        let stringDate = dateFormat.string(from: date)
+        return stringDate
+    }
+
+    func getDateTimeFromUnix() -> String {
+        let date = Date(timeIntervalSince1970: Double(self))
+        let dateFormat = DateFormatter().then {
+            $0.dateStyle = .short
+            $0.timeStyle = .short
+            $0.dateFormat = "MM/dd"
         }
         let stringDate = dateFormat.string(from: date)
         return stringDate

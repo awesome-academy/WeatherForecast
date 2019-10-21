@@ -10,4 +10,5 @@ target 'WeatherForcast' do
   pod 'Alamofire', '~> 4.7.2'
   pod 'Then'
   pod 'Reusable'
+  pod 'ReachabilitySwift'
 end

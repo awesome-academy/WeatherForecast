@@ -43,7 +43,6 @@ class BaseViewController: UIViewController {
         let okButton = UIAlertAction(title: "ok", style: .default) { (action) in
             handler?()
         }
-        alertController.addAction(cancelButton)
         alertController.addAction(okButton)
         view.present(alertController, animated: true, completion: nil)
     }

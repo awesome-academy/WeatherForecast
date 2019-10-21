@@ -15,16 +15,16 @@ final class FiveDayTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet private weak var minTemperatureLabel: UILabel!
     @IBOutlet private weak var maxTemperatureLabel: UILabel!
     @IBOutlet private weak var weatherImage: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+
     func fillData(_ data: FiveDayWeather?) {
         guard let dataReceived = data else {
             return
         }
-        dayLabel.text = dataReceived.dateTime.getStringDayOfWeekFromUnix()
+        dayLabel.text = dataReceived.dateTime.getStringDayOfWeekFromUnix().toVietNameseString()
         minTemperatureLabel.text = dataReceived.mainData?.tempMin.getStringNoDecimal()
         maxTemperatureLabel.text = dataReceived.mainData?.tempMax.getStringNoDecimal()
     }

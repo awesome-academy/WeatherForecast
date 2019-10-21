@@ -78,7 +78,7 @@ final class ServiceRequest<T: CoreObject> {
             return
         }
 
-        cloudResponseClosure?(T(data: [kArrayKey: result]))
+        cloudResponseClosure?(T(data: [Result.arrayKey: result]))
     }
 
     func handleError(error: Error?) {

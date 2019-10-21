@@ -18,6 +18,8 @@ final class DataViewController: UIViewController {
     private var fiveDayWeather = [FiveDayWeather]()
     private var uvIndex: UVIndex?
     private let dispatch = DispatchGroup()
+    private var hourOfDayTemperature = [FiveDayWeather]()
+    private var weatherInWeek = [FiveDayWeather]()
 
     private let serviceHelper: ServiceHelper? = {
         return ServiceHelper.getInstance(CurrentService(),
@@ -39,6 +41,7 @@ final class DataViewController: UIViewController {
         super.viewDidLoad()
         configureView()
         configureTable()
+        getWeatherData()
     }
 
     private func configureTable() {
@@ -81,19 +84,67 @@ final class DataViewController: UIViewController {
     }
 
     private func getWeatherData() {
-        dispatch.enter()
+        startIndicator()
         getFiveDayData()
+        getUVData()
+        getCurrentWeather()
+
+        dispatch.notify(queue: .main) {
+            self.dataTableview.reloadData()
+            self.stopIndicator()
+        }
     }
 
     private func getFiveDayData() {
+        dispatch.enter()
         var param = FiveDayParams()
         param.cityName = currentWeather?.name
 
         serviceHelper?.getFiveDayData(param: param, onSuccess: { [weak self] dataList in
             self?.fiveDayWeather = dataList
+            self?.filterTemperature(dataList)
+        }, onFailed: { [weak self] _, _ in
             self?.dispatch.leave()
-        }, onFailed: { (errMsg, errCode) in
         })
+    }
+
+    private func getUVData() {
+        dispatch.enter()
+        var param = UVIndexParams()
+        param.coord = currentWeather?.coordData
+
+        serviceHelper?.getUVData(param: param, onSuccess: { [weak self] index in
+            self?.uvIndex = index
+            self?.dispatch.leave()
+        }, onFailed: { [weak self] _, _ in
+            self?.dispatch.leave()
+        })
+    }
+
+    private func getCurrentWeather() {
+        dispatch.enter()
+        var param = CurrentWeatherParams()
+        param.cityName = currentWeather?.name
+
+        serviceHelper?.getWeather(param: param, onSuccess: { [weak self] weather in
+            self?.currentWeather = weather
+            self?.dispatch.leave()
+        }, onFailed: { [weak self] _, _ in
+            self?.dispatch.leave()
+        })
+    }
+
+    private func filterTemperature(_ inputData: [FiveDayWeather]) {
+        let myDate = Date().dayAfter.getCurrentDateString()
+        for item in inputData {
+            if item.dateTime.getDateTimeFromUnix() == myDate {
+                hourOfDayTemperature.append(item)
+            }
+            if item.dateTime.getStringHourFromUnix() == Result.hourFilter {
+                weatherInWeek.append(item)
+            }
+        }
+        dispatch.leave()
     }
 }
 
@@ -109,13 +160,13 @@ extension DataViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return bannerRow
+            return TableRow.bannerRow
         case 1:
-            return temperatureRow
+            return TableRow.temperatureRow
         case 2:
-            return fiveDayROw
+            return weatherInWeek.count
         case 3:
-            return detailRow
+            return TableRow.detailRow
         default:
             return 0
         }
@@ -129,12 +180,30 @@ extension DataViewController: UITableViewDataSource {
 
         switch indexPath.section {
         case 0:
+
             let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: BannerTableViewCell.self).then {
                 $0.fillData(currentWeather)
             }
             return cell
+
         case 1:
-            let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: TemperatureTableViewCell.self).then { _ in
+            let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: TemperatureTableViewCell.self).then {
+                $0.fillData(hourOfDayTemperature)
+                $0.fillTodayInfo(currentWeather)
+            }
+            return cell
+
+        case 2:
+            let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: FiveDayTableViewCell.self).then {
+                $0.fillData(weatherInWeek[indexPath.row])
+            }
+            return cell
+
+        case 3:
+            let cell = dataTableview.dequeueReusableCell(for: indexPath, cellType: DetailWeatherTableViewCell.self).then {
+                $0.fillUVIndex(uvIndex)
+                $0.fillCurrentWeather(currentWeather)
+                $0.fillFiveDayWeather(fiveDayWeather.first)
             }
             return cell
         default:
