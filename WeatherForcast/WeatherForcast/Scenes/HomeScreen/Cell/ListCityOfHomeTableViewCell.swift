@@ -23,7 +23,9 @@ final class ListCityOfHomeTableViewCell: UITableViewCell, NibReusable {
 
     func fillData(data: CurrentWeather?) {
         guard let dataReceived = data else { return }
-        tempLabel.text = dataReceived.mainData?.temp.getStringNoDecimal()
+        if let temperature = dataReceived.mainData?.temp.getStringNoDecimal() {
+            tempLabel.text = temperature + "°"
+        }
         cityLabel.text = dataReceived.name
         timeLabel.text = dataReceived.dateTimeCurrent.getStringDateFromUnix()
     }

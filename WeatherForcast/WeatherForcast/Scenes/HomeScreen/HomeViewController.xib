@@ -37,7 +37,7 @@
                                         <constraint firstAttribute="width" constant="30" id="BiC-GH-Tar"/>
                                         <constraint firstAttribute="height" constant="30" id="WBf-yw-krk"/>
                                     </constraints>
-                                    <state key="normal" title="Button"/>
+                                    <state key="normal" title="Button" image="add_image"/>
                                     <connections>
                                         <action selector="searchAction:" destination="-1" eventType="touchUpInside" id="pCA-h8-Abj"/>
                                     </connections>
@@ -58,6 +58,11 @@
                                 <constraint firstItem="vMf-0y-vfx" firstAttribute="centerY" secondItem="pkY-EW-dAm" secondAttribute="centerY" id="Y8c-gF-Lr3"/>
                                 <constraint firstAttribute="height" constant="34" id="ikw-qn-CGk"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BEY-by-Dgv">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="613"/>
@@ -87,4 +92,7 @@
             <point key="canvasLocation" x="138.40000000000001" y="132.68365817091455"/>
         </view>
     </objects>
+    <resources>
+        <image name="add_image" width="30" height="30"/>
+    </resources>
 </document>

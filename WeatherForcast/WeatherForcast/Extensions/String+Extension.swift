@@ -6,7 +6,7 @@
 //  Copyright © 2019 Sun. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension String {
     func removeWhiteSpaces() -> String {
@@ -35,6 +35,19 @@ extension String {
             return "Chủ Nhật"
         default:
             return self
+        }
+    }
+
+    func toWeatherIcon() -> UIImage {
+        switch self {
+        case "Rain":
+            return #imageLiteral(resourceName: "rain_image")
+        case "Clouds":
+            return #imageLiteral(resourceName: "cloud_image")
+        case "Clear":
+            return #imageLiteral(resourceName: "sunny_image")
+        default:
+            return #imageLiteral(resourceName: "cloud_image")
         }
     }
 }

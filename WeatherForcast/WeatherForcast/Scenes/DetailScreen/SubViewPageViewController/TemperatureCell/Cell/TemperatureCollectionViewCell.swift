@@ -26,6 +26,7 @@ final class TemperatureCollectionViewCell: UICollectionViewCell, NibReusable {
             temperatureLabel.text = temperature + "°"
         }
         timeLabel.text = dataReceived.dateTime.getStringHourFromUnix()
+        weatherImage.image = dataReceived.weatherData.first?.main.toWeatherIcon()
     }
 }
 
