@@ -24,7 +24,7 @@ final class BannerTableViewCell: UITableViewCell, NibReusable {
             return
         }
         nameLabel.text = dataReceived.name
-        descriptionLabel.text = dataReceived.weatherData[0].description
+        descriptionLabel.text = dataReceived.weatherData.first?.description
         if let temperature = dataReceived.mainData?.temp.getStringNoDecimal() {
             temperatureLabel.text = temperature + "°"
         }

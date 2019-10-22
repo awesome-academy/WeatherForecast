@@ -33,14 +33,10 @@ final class ServiceHelper {
     }
 
     func getWeather(param: CurrentWeatherParams,
-                    onSuccess: @escaping ((_ data: CurrentWeather) -> Void),
+                    onSuccess: @escaping ((_ data: CurrentWeatherResponse) -> Void),
                     onFailed: @escaping Failure) {
         currentService.getCurrentWeather(param: param).cloudResponse { (response: CurrentWeatherResponse) in
-            guard let data = response.object else {
-                onFailed(response.statusMessage, response.statusCode)
-                return
-            }
-            onSuccess(data)
+            onSuccess(response)
         }.cloudError { (errMsg, errCode) in
             onFailed(errMsg, errCode)
         }

@@ -15,7 +15,6 @@ final class SearchViewController: BaseViewController {
 
     var delegate: PassDataBetweenViewController?
     var placeList = [Place]()
-    var currentWeather: CurrentWeather?
     private var indicator = UIActivityIndicatorView()
 
     private let serviceHelper: ServiceHelper? = {
@@ -32,7 +31,7 @@ final class SearchViewController: BaseViewController {
     }
 
     private func configureTableView() {
-        searchTableView.then {
+        searchTableView.do {
             $0.delegate = self
             $0.dataSource = self
             $0.register(cellType: PlacesTableViewCell.self)
@@ -46,7 +45,7 @@ final class SearchViewController: BaseViewController {
     }
 
     private func startIndicator() {
-        indicator.then {
+        indicator.do {
             $0.center = self.view.center
             $0.hidesWhenStopped = true
             $0.style = .gray
@@ -76,11 +75,20 @@ extension SearchViewController: UITableViewDelegate {
         var param = CurrentWeatherParams()
         param.cityName = placeList[indexPath.row].mainText
 
-        serviceHelper?.getWeather(param: param, onSuccess: { [weak self] weather in
-            self?.currentWeather = weather
+        serviceHelper?.getWeather(param: param, onSuccess: { [weak self] response in
+            guard let weather = response.object else {
+                self?.alertShow(title: Message.errorTitle, message: Message.errorMessage, view: self ?? UIViewController())
+                return
+            }
+
             self?.delegate?.passDataBetweenViewController(data: weather)
             self?.navigationController?.popViewController(animated: true)
         }, onFailed: { [weak self] _, _ in
+            self?.alertShow(title: Message.errorTitle, message: Message.errorCity, view: self ?? UIViewController(), handler: {
+                self?.searchBar.text = ""
+                self?.placeList.removeAll()
+                self?.searchTableView.reloadData()
+            })
         })
     }
 }

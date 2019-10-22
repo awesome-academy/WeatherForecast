@@ -2,6 +2,11 @@ PODS:
   - Alamofire (4.7.3)
   - netfox (1.13.0)
   - ReachabilitySwift (4.3.0)
+  - Realm (3.12.0):
+    - Realm/Headers (= 3.12.0)
+  - Realm/Headers (3.12.0)
+  - RealmSwift (3.12.0):
+    - Realm (= 3.12.0)
   - Reusable (4.0.4):
     - Reusable/Storyboard (= 4.0.4)
     - Reusable/View (= 4.0.4)
@@ -13,6 +18,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.7.2)
   - netfox
   - ReachabilitySwift
+  - RealmSwift
   - Reusable
   - Then
 
@@ -21,6 +27,8 @@ SPEC REPOS:
     - Alamofire
     - netfox
     - ReachabilitySwift
+    - Realm
+    - RealmSwift
     - Reusable
     - Then
 
@@ -28,9 +36,11 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   netfox: 44e626a4fe8bd1cde774346b03edb84a593077de
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
+  RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
   Reusable: 7fc772097df3e5fc86f59d8a7af9708e49b5ff55
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
 
-PODFILE CHECKSUM: 56b36326ec87d664a0328f52966d480a4ef1c71c
+PODFILE CHECKSUM: c60b80ba5e5960a8249f395fa98aeaa140ad630c
 
 COCOAPODS: 1.5.3

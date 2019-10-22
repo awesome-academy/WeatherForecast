@@ -6,9 +6,10 @@
 //  Copyright © 2019 Sun. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Then
 
-struct Coordinate: CoreObject {
+struct Coordinate: CoreObject, Then {
     var lon = 0.0
     var lat = 0.0
 

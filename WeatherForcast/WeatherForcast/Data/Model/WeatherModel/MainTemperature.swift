@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Then
 
-struct MainTemperature: CoreObject {
+struct MainTemperature: CoreObject, Then {
     var temp = 0.0
     var humidity = 0
     var tempMin = 0.0

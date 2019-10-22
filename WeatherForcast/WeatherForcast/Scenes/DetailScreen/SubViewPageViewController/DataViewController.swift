@@ -45,7 +45,7 @@ final class DataViewController: UIViewController {
     }
 
     private func configureTable() {
-        dataTableview.then {
+        dataTableview.do {
             $0.delegate = self
             $0.dataSource = self
             $0.backgroundColor = .clear
@@ -57,7 +57,7 @@ final class DataViewController: UIViewController {
     }
 
     private func startIndicator() {
-        indicator.then {
+        indicator.do {
             $0.center = self.view.center
             $0.hidesWhenStopped = true
             $0.style = .gray
@@ -126,7 +126,11 @@ final class DataViewController: UIViewController {
         var param = CurrentWeatherParams()
         param.cityName = currentWeather?.name
 
-        serviceHelper?.getWeather(param: param, onSuccess: { [weak self] weather in
+        serviceHelper?.getWeather(param: param, onSuccess: { [weak self] response in
+            guard let weather = response.object else {
+                self?.dispatch.leave()
+                return
+            }
             self?.currentWeather = weather
             self?.dispatch.leave()
         }, onFailed: { [weak self] _, _ in

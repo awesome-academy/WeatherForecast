@@ -22,26 +22,26 @@ final class TemperatureTableViewCell: UITableViewCell, NibReusable {
         super.awakeFromNib()
         configureCollection()
     }
-    
+
     private func configureCollection() {
-        temperatureCollection.then {
+        temperatureCollection.do {
             $0.delegate = self
             $0.dataSource = self
             $0.backgroundColor = .clear
             $0.register(cellType: TemperatureCollectionViewCell.self)
         }
     }
-    
+
     func fillTodayInfo(_ data: CurrentWeather?) {
         guard let received = data else {
             return
         }
-        let text = received.dateTimeCurrent?.getStringDayOfWeekFromUnix()
-        dayLabel.text = "Hôm nay \(text?.toVietNameseString() ?? "")"
+        let stringDate = received.dateTimeCurrent.getStringDayOfWeekFromUnix()
+        dayLabel.text = "Hôm nay \(stringDate.toVietNameseString())"
         temperatureMaxLabel.text = received.mainData?.tempMax.getStringNoDecimal()
         temperatureMinLabel.text = received.mainData?.tempMin.getStringNoDecimal()
     }
-    
+
     func fillData(_ data: [FiveDayWeather]?) {
         guard let dataReceived = data else {
             return
@@ -66,7 +66,7 @@ extension TemperatureTableViewCell: UICollectionViewDataSource {
     }
 }
 extension TemperatureTableViewCell: UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
